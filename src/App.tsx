@@ -10,7 +10,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const { Navigator, Screen } = createNativeStackNavigator();
 
 const App = () => {
-  const [currentRoute, setCurrentRoute] = useState('Introduction');
+  const [currentRoute, setCurrentRoute] = useState<number>(1);
 
   useEffect(() => {
     setTimeout(() => {

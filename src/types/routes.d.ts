@@ -1,7 +1,7 @@
   
 
 export interface RouteDrawer {
-  key: string;
+  key: string | number;
   title: string;
   component: any;
   parent: string | null;

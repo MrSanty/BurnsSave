@@ -11,7 +11,7 @@ import { RouteDrawer } from "src/types/routes";
 
 export const drawerRoutes: RouteDrawer[] = [
   {
-    key: 'Home',
+    key: 1,
     title: 'Inicio',
     component: null,
     parent: null,
@@ -19,7 +19,7 @@ export const drawerRoutes: RouteDrawer[] = [
     showHeader: true
   },
   {
-    key: 'Definition',
+    key: 2,
     title: 'Definición',
     component: Definition,
     parent: 'Inicio',
@@ -27,7 +27,7 @@ export const drawerRoutes: RouteDrawer[] = [
     showHeader: true
   },
   {
-    key: 'TypeOfBurns',
+    key: 3,
     title: 'Tipos de quemaduras',
     component: StackTypeOfBurns,
     parent: 'Inicio',
@@ -35,7 +35,7 @@ export const drawerRoutes: RouteDrawer[] = [
     showHeader: false
   },
   {
-    key: 'Clasification',
+    key: 4,
     title: 'Clasificación',
     component: Clasification,
     parent: 'Inicio',
@@ -43,7 +43,7 @@ export const drawerRoutes: RouteDrawer[] = [
     showHeader: true
   },
   {
-    key: 'Complications',
+    key: 5,
     title: 'Complicaciones',
     component: null,
     parent: 'Inicio',
@@ -51,7 +51,7 @@ export const drawerRoutes: RouteDrawer[] = [
     showHeader: true
   },
   {
-    key: 'Prevention',
+    key: 6,
     title: 'Prevención de la quemadura',
     component: null,
     parent: null,
@@ -59,7 +59,7 @@ export const drawerRoutes: RouteDrawer[] = [
     showHeader: true
   },
   {
-    key: 'InHome',
+    key: 7,
     title: 'Hogar',
     component: null,
     parent: 'Prevención de la quemadura',
@@ -67,7 +67,7 @@ export const drawerRoutes: RouteDrawer[] = [
     showHeader: true
   },
   {
-    key: 'Labor',
+    key: 8,
     title: 'Laboral',
     component: null,
     parent: 'Prevención de la quemadura',
@@ -75,7 +75,7 @@ export const drawerRoutes: RouteDrawer[] = [
     showHeader: true
   },
   {
-    key: 'WhatToDo',
+    key: 9,
     title: '¿Qué hacer en caso de quemadura?',
     component: null,
     parent: null,
@@ -83,7 +83,7 @@ export const drawerRoutes: RouteDrawer[] = [
     showHeader: true
   },
   {
-    key: 'References',
+    key: 10,
     title: 'Referencias',
     component: null,
     parent: null,
@@ -91,7 +91,7 @@ export const drawerRoutes: RouteDrawer[] = [
     showHeader: true
   },
   {
-    key: 'PagesOfInterest',
+    key: 11,
     title: 'Páginas de interés',
     component: null,
     parent: null,
@@ -99,7 +99,7 @@ export const drawerRoutes: RouteDrawer[] = [
     showHeader: true
   },
   {
-    key: 'About',
+    key: 12,
     title: 'Acerca de',
     component: null,
     parent: null,

@@ -2,20 +2,35 @@ import { View, Text, StyleSheet, Image, Pressable } from 'react-native';
 import { typesOfBurnsRoutes } from 'src/routes/typesOfBurns.routes';
 import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
+import { useRouteContext } from 'src/hooks/useRouteContext';
+import { useEffect } from 'react';
 
-const TypeOfBurns = () => {
-  const navigation = useNavigation<any>();
+interface TypeOfBurnsProps {
+  navigation: any;
+}
+
+const TypeOfBurns = ({ navigation }: TypeOfBurnsProps) => {
+  const { setCurrentRoute } = useRouteContext();
+
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      setCurrentRoute(3);
+    });
+
+    return unsubscribe;
+  }, [ navigation ]);
+
 
   return (
     <View style={styles.container}>
-      <Image
-        source={require('src/assets/images/typesImages.png')}
-        style={{
-          width: '100%',
-          maxHeight: 276,
-          resizeMode: 'contain',
-        }}
-      />
+      <View
+        style={styles.containerImage}
+      >
+        <Image
+          source={require('src/assets/images/typesImages.png')}
+          style={styles.image}
+        />
+      </View>
 
       <View style={styles.card}>
         <View style={styles.cardTitle}>
@@ -66,6 +81,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%'
+  },
+  containerImage: {
+    height: 270
+  },
+  image: {
+    width: '100%',
+    height: '100%',
+    resizeMode: 'cover'
   },
   card: {
     position: 'absolute',

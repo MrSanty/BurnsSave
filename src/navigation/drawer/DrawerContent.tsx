@@ -27,7 +27,7 @@ const DrawerContent = () => {
       return element.parent === 'Inicio';
     });
 
-    setCurrentRoute('Definition');
+    setCurrentRoute(2);
 
     setActiveItems(listOfRoutes);
   }, []);
@@ -35,10 +35,10 @@ const DrawerContent = () => {
   const onItemPress = (item: RouteDrawer) => {
     if (updateItems(item)) {
       navigation.navigate({
-        name: item.key,
+        name: item.title,
         params: { previousRoute: currentRoute },
       });
-      setCurrentRoute(item.key);
+      setCurrentRoute(item.key as number);
     }
   };
 

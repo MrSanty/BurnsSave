@@ -35,7 +35,7 @@ const DrawerMenu = () => {
               headerShown: item.showHeader
             }}
             key={item.key}
-            name={item.key}
+            name={item.title}
             component={item.component}
           />
         ) : null

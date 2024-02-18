@@ -1,7 +1,24 @@
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Component, useEffect, useState } from 'react';
+import { useRouteContext } from 'src/hooks/useRouteContext';
 
-const Clasification = () => {
+interface ClasificationProps {
+  navigation: any;
+}
+
+
+const Clasification = ({ navigation }: ClasificationProps) => {
+  const { setCurrentRoute } = useRouteContext();
+
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      setCurrentRoute(4);
+    });
+
+    return unsubscribe;
+  }, [ navigation ]);
+
+
   /* const [ data, setData ] = useState({
     tableHead: [ 'CONVERSESMITH', 'DENOMINACIÓN ABA', 'NIVEL HISTOLÓGICO', 'PRONÓSTICO' ],
     tableData: [
