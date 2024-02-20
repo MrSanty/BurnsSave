@@ -1,24 +1,14 @@
 import { View, Text, StyleSheet, Image, Pressable } from 'react-native';
 import { typesOfBurnsRoutes } from 'src/routes/typesOfBurns.routes';
 import LinearGradient from 'react-native-linear-gradient';
-import { useNavigation } from '@react-navigation/native';
-import { useRouteContext } from 'src/hooks/useRouteContext';
-import { useEffect } from 'react';
+import { useNavigationChange } from 'src/hooks/useNavigationChange';
 
 interface TypeOfBurnsProps {
   navigation: any;
 }
 
 const TypeOfBurns = ({ navigation }: TypeOfBurnsProps) => {
-  const { setCurrentRoute } = useRouteContext();
-
-  useEffect(() => {
-    const unsubscribe = navigation.addListener('focus', () => {
-      setCurrentRoute(3);
-    });
-
-    return unsubscribe;
-  }, [ navigation ]);
+  useNavigationChange(navigation, 3);
 
 
   return (

@@ -1,22 +1,12 @@
-import { useEffect } from 'react';
 import { ImageBackground, StyleSheet, Text, View } from 'react-native';
-import { useRouteContext } from 'src/hooks/useRouteContext';
+import { useNavigationChange } from 'src/hooks/useNavigationChange';
 
 interface DefinitionProps {
   navigation: any;
 }
 
 const Definition = ({ navigation }: DefinitionProps) => {
-  const { setCurrentRoute } = useRouteContext();
-
-  useEffect(() => {
-    const unsubscribe = navigation.addListener('focus', () => {
-      setCurrentRoute(2);
-    });
-
-    return unsubscribe;
-  }, [ navigation ]);
-
+  useNavigationChange(navigation, 2);
 
   return (
     <View style={{ flex: 1 }}>
