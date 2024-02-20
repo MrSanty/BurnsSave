@@ -1,82 +1,27 @@
 import global from 'src/styles/global';
-import { useEffect, useState } from 'react';
-import { useRouteContext } from 'src/hooks/useRouteContext';
 import LinearGradient from 'react-native-linear-gradient';
-import { useNavigation } from '@react-navigation/native';
 import {
   Image,
   SafeAreaView,
   ScrollView,
   StyleSheet,
-  Text,
-  TouchableWithoutFeedback,
   View,
 } from 'react-native';
 import ParentDrawerButton from 'src/components/ParentDrawerButton';
 import ChildrenDrawerButton from 'src/components/ChildrenDrawerButton';
 import { RouteDrawer } from 'src/types/routes';
-import { drawerRoutes } from 'src/routes/drawer.routes';
+import useDrawerMenu from 'src/hooks/useDrawerMenu';
+import { useRouteContext } from 'src/hooks/useRouteContext';
 
 const CustomMenu = () => {
-  const navigation = useNavigation<any>();
-  const { currentRoute, setCurrentRoute } = useRouteContext();
-  const [ listRoutes, setListRoutes ] = useState<RouteDrawer[]>([]);
-  const [ activeParent, setActiveParent ] = useState<RouteDrawer | null>(null);
-
-  useEffect(() => {
-    let activeRoute = null;
-
-    const listOfRoutes = drawerRoutes.map(route => {
-      if (route.title === 'Inicio') {
-        activeRoute = route;
-        route.show = true;
-      } else {
-        route.show = false;
-      }
-
-      return route;
-    })
-
-    setCurrentRoute(2);
-    setActiveParent(activeRoute);
-    setListRoutes(listOfRoutes);
-  }, [])
-
-  const onRoutePress = (route: RouteDrawer) => {
-    if (route.children) {
-      let activeRoute = null;
-      const updatedRoutes = listRoutes.map(item => {
-        if (item.title !== route.title) {
-          item.show = false;
-        }
-
-        if (item.title === route.title) {
-          activeRoute = item;
-        }
-
-        return item;
-      })
-
-      setActiveParent(activeRoute);
-      setListRoutes(updatedRoutes);
-    } else {
-      navigation.navigate({
-        name: route.title,
-        params: { previousRoute: currentRoute },
-      })
-      setCurrentRoute(route.key as number);
-    }
-  }
-
-  const returnToPreviousItem = (route: RouteDrawer) => {
-    const updatedRoutes = listRoutes.map(item => {
-      item.show = true;
-      return item;
-    })
-
-    setActiveParent(null);
-    setListRoutes(updatedRoutes);
-  }
+  const { currentRoute } = useRouteContext();
+  const {
+    listRoutes,
+    activeParent,
+    onRoutePress,
+    returnToPreviousItem
+  } = useDrawerMenu();
+  
 
   return (
     <LinearGradient
