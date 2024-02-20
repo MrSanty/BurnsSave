@@ -1,11 +1,16 @@
   
 
 export interface RouteDrawer {
-  key: string | number;
+  key: number;
+  title: string;
+  children: RouteBeta[] | null;
+  show: boolean;
+}
+
+export interface RouteDrwerScreen {
+  key: number;
   title: string;
   component: any;
-  parent: string | null;
-  isParent: boolean;
   showHeader: boolean;
 }
 

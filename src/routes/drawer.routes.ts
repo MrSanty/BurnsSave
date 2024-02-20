@@ -7,103 +7,146 @@ import References from "screens/References";
 import PagesOfInterest from "screens/PagesOfInterest";
 import About from "screens/About"; */
 import StackTypeOfBurns from "src/navigation/stack/StackTypeOfBurns";  
-import { RouteDrawer } from "src/types/routes";
+import { RouteDrawer, RouteDrwerScreen } from "src/types/routes";
 
 export const drawerRoutes: RouteDrawer[] = [
   {
     key: 1,
     title: 'Inicio',
-    component: null,
-    parent: null,
-    isParent: true,
-    showHeader: true
+    children: [
+      {
+        key: 2,
+        title: 'Definición',
+        children: null,
+        show: true
+      },
+      {
+        key: 3,
+        title: 'Tipos de quemaduras',
+        children: null,
+        show: true
+      },
+      {
+        key: 4,
+        title: 'Clasificación',
+        children: null,
+        show: true
+      },
+      {
+        key: 5,
+        title: 'Complicaciones',
+        children: null,
+        show: true
+      }
+    ],
+    show: true,
+    
   },
+  {
+    key: 6,
+    title: 'Prevención de la quemadura',
+    children: [
+      {
+        key: 7,
+        title: 'Hogar',
+        children: null,
+        show: true
+      },
+      {
+        key: 8,
+        title: 'Laboral',
+        children: null,
+        show: true
+      }
+    ],
+    show: true,
+    
+  },
+  {
+    key: 9,
+    title: '¿Qué hacer en caso de quemadura?',
+    children: null,
+    show: true
+  },
+  {
+    key: 10,
+    title: 'Referencias',
+    children: null,
+    show: true
+  },
+  {
+    key: 11,
+    title: 'Páginas de interés',
+    children: null,
+    show: true
+  },
+  {
+    key: 12,
+    title: 'Acerca de',
+    children: null,
+    show: true
+  }
+]
+
+export const drawerScreenRoutes: RouteDrwerScreen[] = [
   {
     key: 2,
     title: 'Definición',
     component: Definition,
-    parent: 'Inicio',
-    isParent: false,
     showHeader: true
   },
   {
     key: 3,
     title: 'Tipos de quemaduras',
     component: StackTypeOfBurns,
-    parent: 'Inicio',
-    isParent: false,
     showHeader: false
   },
   {
     key: 4,
     title: 'Clasificación',
     component: Clasification,
-    parent: 'Inicio',
-    isParent: false,
     showHeader: true
   },
   {
     key: 5,
     title: 'Complicaciones',
-    component: null,
-    parent: 'Inicio',
-    isParent: false,
-    showHeader: true
-  },
-  {
-    key: 6,
-    title: 'Prevención de la quemadura',
-    component: null,
-    parent: null,
-    isParent: true,
+    component: Clasification,
     showHeader: true
   },
   {
     key: 7,
     title: 'Hogar',
-    component: null,
-    parent: 'Prevención de la quemadura',
-    isParent: false,
+    component: Clasification,
     showHeader: true
   },
   {
     key: 8,
     title: 'Laboral',
-    component: null,
-    parent: 'Prevención de la quemadura',
-    isParent: false,
+    component: Clasification,
     showHeader: true
   },
   {
     key: 9,
     title: '¿Qué hacer en caso de quemadura?',
-    component: null,
-    parent: null,
-    isParent: false,
+    component: Clasification,
     showHeader: true
   },
   {
     key: 10,
     title: 'Referencias',
-    component: null,
-    parent: null,
-    isParent: false,
+    component: Clasification,
     showHeader: true
   },
   {
     key: 11,
     title: 'Páginas de interés',
-    component: null,
-    parent: null,
-    isParent: false,
+    component: Clasification,
     showHeader: true
   },
   {
     key: 12,
     title: 'Acerca de',
-    component: null,
-    parent: null,
-    isParent: false,
+    component: Clasification,
     showHeader: true
   }
 ]

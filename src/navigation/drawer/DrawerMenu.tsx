@@ -1,13 +1,13 @@
-import { drawerRoutes } from 'src/routes/drawer.routes';
+import { drawerScreenRoutes } from 'src/routes/drawer.routes';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import DrawerContent from './DrawerContent';
 import DrawerScreenHeader from 'src/components/DrawerScreenHeader';
+import CustomMenu from './CustomMenu';
 const { Navigator, Screen } = createDrawerNavigator();
 
 const DrawerMenu = () => {
   return (
     <Navigator
-      drawerContent={props => <DrawerContent />}
+      drawerContent={props => <CustomMenu />}
       screenOptions={{
         header: props => <DrawerScreenHeader />,
         drawerStyle: {
@@ -28,7 +28,7 @@ const DrawerMenu = () => {
         drawerActiveTintColor: 'white',
       }}
     >
-      {drawerRoutes.map(item =>
+      {drawerScreenRoutes.map(item =>
         item.component ? (
           <Screen
             options={{

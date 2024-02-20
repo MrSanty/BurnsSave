@@ -5,29 +5,29 @@ import { useEffect } from "react";
 
 interface DrawerParentButtonProps {
   returnToPreviousItem: (item: RouteDrawer) => void;
-  updateItems: (item: RouteDrawer) => boolean;
-  item: RouteDrawer;
+  updateItems: (item: RouteDrawer) => void;
+  route: RouteDrawer;
   isActive: boolean;
 }
 
-const DrawerParentButton = ({ returnToPreviousItem, updateItems, item, isActive }: DrawerParentButtonProps) => {
+const ParentDrawerButton = ({ returnToPreviousItem, updateItems, route, isActive }: DrawerParentButtonProps) => {
   const rotation = useSharedValue(0);
   const animatedStyle = useAnimatedStyle(() => {
     return {
-      transform: [{ rotate: `${rotation.value}deg` }],
+      transform: [ { rotate: `${rotation.value}deg` } ],
     };
   });
 
   useEffect(() => {
     rotation.value = withTiming(isActive ? 180 : 0, { duration: 200 });
-  }, []);
+  }, [ isActive ]);
 
 
   const handlePress = () => {
     if (isActive) {
-      returnToPreviousItem(item)
+      returnToPreviousItem(route)
     } else {
-      updateItems(item)
+      updateItems(route)
     }
   }
 
@@ -38,17 +38,19 @@ const DrawerParentButton = ({ returnToPreviousItem, updateItems, item, isActive 
       <View
         style={styles.button}
       >
-        <Animated.Image
-          source={require('src/assets/icons/arrow-icon.png')}
-          style={[ styles.iconArrow, animatedStyle ]}
-        />
+        {
+          route?.children && (
+            <Animated.Image
+              source={require('src/assets/icons/arrow-icon.png')}
+              style={[ styles.iconArrow, animatedStyle ]}
+            />
+          )
+        }
         <Text
           style={styles.textButton}
         >
           {
-            isActive 
-              ? item?.parent
-              : item?.title
+            route.title
           }
         </Text>
       </View>
@@ -66,20 +68,22 @@ const styles = StyleSheet.create({
     borderTopWidth: 0.5,
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    position: 'relative'
   },
   iconArrow: {
     width: 10,
     height: 10,
-    marginLeft: 20,
+    left: 20,
+    position: 'absolute',
     resizeMode: 'contain'
   },
   textButton: {
     fontFamily: 'Poppins-Bold',
     color: 'white',
-    marginLeft: 20,
+    marginLeft: 50,
     fontSize: 13
   },
 });
 
-export default DrawerParentButton;
+export default ParentDrawerButton;

@@ -1,43 +1,42 @@
+import { RouteDrawer } from "src/types/routes";
 import { StyleSheet, Text, View } from "react-native";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
 interface DrawerButtonProps {
-  item: any,
-  onItemPress: (item: any) => void,
-  activeItems: any,
-  isChildren?: boolean,
-  isActive?: boolean,
-  isParent?: boolean
+  route: RouteDrawer,
+  onItemPress: (route: RouteDrawer) => void,
+  childrens: RouteDrawer[],
+  isActive: boolean
 }
 
-const DrawerChildButton = ({ item, onItemPress, activeItems, isChildren, isActive }: DrawerButtonProps) => {
-  const isLastItem = item.title === activeItems[ activeItems.length - 1 ].title
+const ChildrenDrawerButton = ({ route, onItemPress, childrens, isActive }: DrawerButtonProps) => {
+  const isLastItem = route.title === childrens[ childrens.length - 1 ].title
   const textColor = !isActive ? "#2E2F32" : isActive ? "#FB0263" : "white"
 
   return (
     <TouchableWithoutFeedback
       style={styles.buttonContainer}
-      onPress={() => onItemPress(item)}
+      onPress={() => onItemPress(route)}
     >
       <View
         style={{
           ...styles.button,
           borderBottomWidth: isLastItem ? 0.5 : 0,
           borderBottomColor: isLastItem ? "white" : "transparent",
-          borderTopColor: isChildren ? "#FFC402" : "white",
-          borderTopWidth: isChildren ? 1 : 0.5,
+          borderTopColor: "#FFC402",
+          borderTopWidth: 1,
           minWidth: "100%",
-          paddingLeft: !isChildren ? 20 : 0,
+          paddingLeft: 20,
         }}
       >
         <Text
           style={{
             ...styles.textButton,
-            fontFamily: isChildren && !isActive ? "Poppins-SemiBold" : 'Poppins-Bold',
-            color: isChildren ? textColor : "white",
+            fontFamily: isActive ? 'Poppins-Bold' : "Poppins-SemiBold",
+            color: textColor,
           }}
         >
-          {item.title}
+          {route.title}
         </Text>
       </View>
     </TouchableWithoutFeedback>
@@ -54,9 +53,9 @@ const styles = StyleSheet.create({
   },
   textButton: {
     color: 'white',
-    marginLeft: 30,
+    marginLeft: 10,
     fontSize: 13
   }
 })
 
-export default DrawerChildButton;
+export default ChildrenDrawerButton;
