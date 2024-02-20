@@ -11,7 +11,7 @@ const StackTypeOfBurns = () => {
       screenOptions={{
         header: props => <DrawerScreenHeader />
       }}
-      initialRouteName="Main"
+      initialRouteName="Index"
     >
       {
         typesOfBurnsRoutes.map((route) => (

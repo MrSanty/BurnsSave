@@ -9,7 +9,7 @@ import FrozenBurn from "src/screens/TypeOfBurns/FrozenBurn";
 export const typesOfBurnsRoutes = [
   {
     key: 'Index',
-    title: 'Tipos de quemaduras',
+    title: 'Index',
     component: TypeOfBurns
   },
   {
