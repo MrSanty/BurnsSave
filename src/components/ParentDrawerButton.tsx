@@ -2,6 +2,7 @@ import { RouteDrawer } from "src/types/routes";
 import { StyleSheet, Text, TouchableWithoutFeedback, View } from "react-native";
 import Animated, { useAnimatedStyle, useSharedValue, withTiming } from "react-native-reanimated";
 import { useEffect } from "react";
+import { useRotateAnimate } from "src/hooks/useRotateAnimate";
 
 interface DrawerParentButtonProps {
   returnToPreviousItem: (item: RouteDrawer) => void;
@@ -11,17 +12,7 @@ interface DrawerParentButtonProps {
 }
 
 const ParentDrawerButton = ({ returnToPreviousItem, updateItems, route, isActive }: DrawerParentButtonProps) => {
-  const rotation = useSharedValue(0);
-  const animatedStyle = useAnimatedStyle(() => {
-    return {
-      transform: [ { rotate: `${rotation.value}deg` } ],
-    };
-  });
-
-  useEffect(() => {
-    rotation.value = withTiming(isActive ? 180 : 0, { duration: 200 });
-  }, [ isActive ]);
-
+  const { animatedStyle } = useRotateAnimate(0, 180, isActive);
 
   const handlePress = () => {
     if (isActive) {
