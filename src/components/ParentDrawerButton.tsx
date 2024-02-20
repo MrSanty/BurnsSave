@@ -60,29 +60,29 @@ const ParentDrawerButton = ({ returnToPreviousItem, updateItems, route, isActive
 
 const styles = StyleSheet.create({
   button: {
-    width: '100%',
-    paddingVertical: 10,
+    alignItems: 'center',
     borderBottomColor: 'white',
     borderBottomWidth: 0.5,
     borderTopColor: 'white',
     borderTopWidth: 0.5,
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center',
-    position: 'relative'
+    paddingVertical: 10,
+    position: 'relative',
+    width: '100%'
   },
   iconArrow: {
-    width: 10,
     height: 10,
     left: 20,
     position: 'absolute',
-    resizeMode: 'contain'
+    resizeMode: 'contain',
+    width: 10
   },
   textButton: {
-    fontFamily: 'Poppins-Bold',
     color: 'white',
-    marginLeft: 50,
-    fontSize: 13
+    fontFamily: 'Poppins-Bold',
+    fontSize: 13,
+    marginLeft: 50
   },
 });
 

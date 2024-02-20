@@ -3,10 +3,10 @@ import { StyleSheet, Text, View } from "react-native";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
 interface DrawerButtonProps {
-  route: RouteDrawer,
-  onItemPress: (route: RouteDrawer) => void,
   childrens: RouteDrawer[],
-  isActive: boolean
+  isActive: boolean,
+  route: RouteDrawer,
+  onItemPress: (route: RouteDrawer) => void
 }
 
 const ChildrenDrawerButton = ({ route, onItemPress, childrens, isActive }: DrawerButtonProps) => {
@@ -45,16 +45,16 @@ const ChildrenDrawerButton = ({ route, onItemPress, childrens, isActive }: Drawe
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    width: "100%",
+    width: "100%"
   },
   button: {
-    width: "100%",
     paddingVertical: 10,
+    width: "100%"
   },
   textButton: {
     color: 'white',
-    marginLeft: 10,
-    fontSize: 13
+    fontSize: 13,
+    marginLeft: 10
   }
 })
 

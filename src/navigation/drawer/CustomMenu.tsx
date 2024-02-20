@@ -140,39 +140,38 @@ const CustomMenu = () => {
 
 const styles = StyleSheet.create({
   logoContainer: {
-    height: 'auto',
-    alignItems: 'center'
+    alignItems: 'center',
+    height: 'auto'
   },
   logo: {
-    width: 180,
     height: 180,
     paddingVertical: 30,
-    resizeMode: 'contain'
+    resizeMode: 'contain',
+    width: 180
   },
   containerDrawer: {
-    width: '100%',
-    height: 240,
     alignItems: 'flex-start',
-    display: 'flex'
+    display: 'flex',
+    height: 240,
+    width: '100%'
   },
   logoUamContainer: {
-    height: 'auto',
-    alignItems: 'center'
+    alignItems: 'center',
+    height: 'auto'
   },
   uamImage: {
-    width: 250,
     height: 250,
-    resizeMode: 'contain'
+    resizeMode: 'contain',
+    width: 250
   },
   widthFull: {
     width: '100%'
   },
   containerButtons: {
+    backgroundColor: '#FAF8F9',
     marginHorizontal: 20,
-    width: '86%',
-    backgroundColor: '#FAF8F9'
+    width: '86%'
   }
-
 })
 
 export default CustomMenu;

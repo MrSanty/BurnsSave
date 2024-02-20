@@ -5,7 +5,7 @@ const ChemicalBurn = () => {
     <View style={styles.container}>
       <Image source={require('src/assets/images/chemical-type.png')} style={styles.image} />
 
-      <View style={styles.textContainer}>
+      <View style={styles.padding30}>
         <View style={styles.contentTitle}>
           <Text style={styles.title}>Quemaduras por químicos</Text>
         </View>
@@ -21,37 +21,37 @@ const ChemicalBurn = () => {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#FAF8F9',
     flex: 1,
-    width: '100%',
-    backgroundColor: '#FAF8F9'
+    width: '100%'
   },
   image: {
+    alignSelf: 'flex-start',
     width: '100%',
-    maxHeight: 400,
     resizeMode: 'cover',
-    alignSelf: 'flex-start'
+    maxHeight: 400
   },
-  textContainer: {
+  padding30: {
     padding: 30
   },
   contentTitle: {
-    marginBottom: 30,
-    alignItems: 'center'
+    alignItems: 'center',
+    marginBottom: 30
   },
   title: {
+    color: '#FB0860',
+    textAlign: 'center',
+    flexWrap: 'wrap',
     fontFamily: 'Poppins-Bold',
     fontSize: 24,
-    width: 170,
-    flexWrap: 'wrap',
-    color: '#FB0860',
-    textAlign: 'center'
+    width: 170
   },
   content: {
+    color: '#2E2F32',
     fontFamily: 'Poppins-Regular',
     fontSize: 16,
     lineHeight: 27,
-    textAlign: 'justify',
-    color: '#2E2F32'
+    textAlign: 'justify'
   }
 });
 
