@@ -10,7 +10,7 @@ const Introduction = () => {
     <SafeAreaView style={styles.flexContainer}>
       <StatusBar
         barStyle="dark-content"
-        backgroundColor="transparent"
+        backgroundColor="#FAF8F9"
         translucent
       />
       <View style={styles.flexContainer}>
