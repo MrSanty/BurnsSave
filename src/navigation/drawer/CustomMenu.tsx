@@ -2,8 +2,6 @@ import global from 'src/styles/global';
 import LinearGradient from 'react-native-linear-gradient';
 import {
   Image,
-  SafeAreaView,
-  ScrollView,
   StyleSheet,
   View,
 } from 'react-native';
@@ -12,6 +10,8 @@ import ChildrenDrawerButton from 'src/components/ChildrenDrawerButton';
 import { RouteDrawer } from 'src/types/routes';
 import useDrawerMenu from 'src/hooks/useDrawerMenu';
 import { useRouteContext } from 'src/hooks/useRouteContext';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const CustomMenu = () => {
   const { currentRoute } = useRouteContext();
@@ -19,9 +19,10 @@ const CustomMenu = () => {
     listRoutes,
     activeParent,
     onRoutePress,
-    returnToPreviousItem
+    returnToPreviousItem,
+    closeDrawer
   } = useDrawerMenu();
-  
+
 
   return (
     <LinearGradient
@@ -30,55 +31,64 @@ const CustomMenu = () => {
       end={{ x: 1, y: 0.9 }}
       style={global.flex}
     >
-      <ScrollView>
-        <SafeAreaView>
-          <View style={styles.logoContainer}>
-            <Image source={require('src/assets/logos/logo.png')} style={styles.logo} />
+      <SafeAreaView>
+        <View style={styles.logoContainer}>
+          <View
+            style={styles.closeButton}
+          >
+            <TouchableOpacity
+              onPress={closeDrawer}
+            >
+              <Image source={require('src/assets/icons/close.png')} style={styles.closeIcon} />
+            </TouchableOpacity>
           </View>
-
-          <View style={styles.containerDrawer}>
-            <View style={styles.widthFull}>
-              {
-                listRoutes.map(route => {
-                  if (route.show) {
-                    return (
-                      <ParentDrawerButton
-                        returnToPreviousItem={returnToPreviousItem}
-                        updateItems={onRoutePress}
-                        route={route}
-                        isActive={route.key === activeParent?.key}
-                        key={route.key}
-                      />
-                    )
-                  }
-                })
-              }
-            </View>
+          <Image source={require('src/assets/logos/logo.png')} style={styles.logo} />
+        </View>
 
 
-            <View style={styles.containerButtons}>
-              {
-                activeParent?.children?.map(route => {
+
+        <View style={styles.containerDrawer}>
+          <View style={styles.widthFull}>
+            {
+              listRoutes.map(route => {
+                if (route.show) {
                   return (
-                    <ChildrenDrawerButton
+                    <ParentDrawerButton
+                      returnToPreviousItem={returnToPreviousItem}
+                      updateItems={onRoutePress}
                       route={route}
-                      onItemPress={onRoutePress}
-                      childrens={activeParent.children as RouteDrawer[]}
-                      isActive={route.key === currentRoute}
+                      isActive={route.key === activeParent?.key}
                       key={route.key}
                     />
                   )
-                })
-              }
-            </View>
+                }
+              })
+            }
           </View>
 
 
-          <View style={styles.logoUamContainer}>
-            <Image source={require('src/assets/logos/uam.png')} style={styles.uamImage} />
+          <View style={styles.containerButtons}>
+            {
+              activeParent?.children?.map(route => {
+                return (
+                  <ChildrenDrawerButton
+                    route={route}
+                    onItemPress={onRoutePress}
+                    childrens={activeParent.children as RouteDrawer[]}
+                    isActive={route.key === currentRoute}
+                    key={route.key}
+                  />
+                )
+              })
+            }
           </View>
-        </SafeAreaView>
-      </ScrollView>
+        </View>
+
+
+        <View style={styles.logoUamContainer}>
+          <Image source={require('src/assets/logos/uam.png')} style={styles.uamImage} />
+        </View>
+      </SafeAreaView>
     </LinearGradient>
   )
 }
@@ -89,7 +99,7 @@ const styles = StyleSheet.create({
     height: 'auto'
   },
   logo: {
-    height: 180,
+    height: 200,
     paddingVertical: 30,
     resizeMode: 'contain',
     width: 180
@@ -97,7 +107,7 @@ const styles = StyleSheet.create({
   containerDrawer: {
     alignItems: 'flex-start',
     display: 'flex',
-    height: 240,
+    height: 230,
     width: '100%'
   },
   logoUamContainer: {
@@ -116,6 +126,17 @@ const styles = StyleSheet.create({
     backgroundColor: '#FAF8F9',
     marginHorizontal: 20,
     width: '86%'
+  },
+  closeButton: {
+    height: 'auto',
+    position: 'absolute',
+    right: 10,
+    top: 15,
+  },
+  closeIcon: {
+    height: 15,
+    resizeMode: 'contain',
+    width: 15
   }
 })
 

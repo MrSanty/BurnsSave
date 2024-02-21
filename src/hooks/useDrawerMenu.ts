@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigation } from '@react-navigation/native';
+import { DrawerActions, useNavigation } from '@react-navigation/native';
 import { BackHandler } from 'react-native';
 import { useRouteContext } from 'src/hooks/useRouteContext';
 import { drawerRoutes } from 'src/routes/drawer.routes';
@@ -73,11 +73,16 @@ const useDrawerMenu = () => {
     setListRoutes(updatedRoutes);
   }
 
+  const closeDrawer = () => {
+    navigation.dispatch(DrawerActions.closeDrawer());
+  }
+
   return {
     listRoutes,
     activeParent,
     onRoutePress,
-    returnToPreviousItem
+    returnToPreviousItem,
+    closeDrawer
   }
 };
 
