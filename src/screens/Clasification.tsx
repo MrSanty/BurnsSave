@@ -1,74 +1,90 @@
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigationChange } from 'src/hooks/useNavigationChange';
 
 interface ClasificationProps {
   navigation: any;
 }
 
-
 const Clasification = ({ navigation }: ClasificationProps) => {
   useNavigationChange(navigation, 4);
 
-
-  /* const [ data, setData ] = useState({
-    tableHead: [ 'CONVERSESMITH', 'DENOMINACIÓN ABA', 'NIVEL HISTOLÓGICO', 'PRONÓSTICO' ],
-    tableData: [
-      [ 'Primer grado', 'Epidérmica', 'Epidermis', 'No necesita injerto. Debería curar Espontáneamente en 7 días sin secuelas' ],
-      [ 'Segundo grado superficial', 'Dérmica superficial', 'Epidermis\nDermis papilar', 'Debería epidermizar espontáneamente en 15 días con secuelas estéticas. Si se complica puede profundizarse' ],
-      [ 'Segundo grado profundo', 'Dérmica profunda', 'Epidermis\nDermis papilar y retícula sin afectar fanéreos profundos', 'Habitualmente termina en injerto con secuelas estéticas y/o funcionales. Puede requerir escarectomía tangencial' ],
-      [ 'Tercer grado', 'Espesor total', 'Epidermis\nDermis e hipodermis pudiendo llegar inclusive hasta el plano muscular y óseo', 'Requiere escarectomía precoz, e injerto o colgajos' ]
-    ]
-  }); */
-
   return (
-
-
-    <>
-      {/* <ScrollView horizontal={true}>
-      <View style={styles.container}>
-        <Table borderStyle={{ borderWidth: 2, borderColor: '#c8e1ff' }}>
-          <Row data={data.tableHead} style={styles.head} textStyle={styles.headerText} />
-          {
-            data.tableData.map((rowData, index) => (
-              <Row
-                key={index}
-                data={rowData}
-                style={styles.cell}
-                textStyle={styles.text}
-              />
-            ))
-          }
-        </Table>
+    <View style={styles.container}>
+      <View
+        style={styles.containerImage}
+      >
+        <Image
+          source={require('src/assets/images/clasification.png')}
+          style={styles.image}
+        />
       </View>
-    </ScrollView> */}
-    </>
+
+      <View style={styles.card}>
+        <View style={styles.cardTitle}>
+          <Text style={styles.title}>TIPOS</Text>
+          <Text style={styles.title}>DE QUEMADURAS</Text>
+        </View>
+      </View>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    padding: 16,
-    paddingTop: 30,
-    backgroundColor: '#fff'
+    flex: 1
   },
-  head: {
-    height: 'auto',
-    width: 700,
-    backgroundColor: '#f1f8ff'
+  containerImage: {
+    height: 270
   },
-  cell: {
-    width: 700
+  image: {
+    height: '100%',
+    resizeMode: 'cover',
+    width: '100%'
   },
-  text: {
-    margin: 6,
-    color: 'black'
+  card: {
+    backgroundColor: '#FAF8F9',
+    borderTopLeftRadius: 45,
+    borderTopRightRadius: 45,
+    paddingHorizontal: 35,
+    paddingVertical: 50,
+    position: 'absolute',
+    height: '100%',
+    top: 230,
+    width: '100%'
   },
-  headerText: {
-    margin: 6,
-    color: 'black',
-    fontWeight: 'bold'
+  cardTitle: {
+    alignItems: 'center',
+    marginBottom: 40
   },
+  title: {
+    color: '#FB0860',
+    fontFamily: 'Poppins-Bold',
+    fontSize: 23,
+    maxHeight: 30,
+    minHeight: 25
+  },
+  contentContainer: {
+    alignItems: 'center',
+    display: 'flex'
+  },
+  contentText: {
+    fontFamily: 'Poppins-Regular',
+    fontSize: 17,
+    textAlign: 'justify'
+  },
+  linearBorder: {
+    borderRadius: 20,
+    marginBottom: 20,
+    width: '100%'
+  },
+  pressableButton: {
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    borderRadius: 20,
+    margin: 2,
+    paddingVertical: 5
+  }
 });
 
 export default Clasification;

@@ -1,4 +1,4 @@
-import { Image, StyleSheet } from 'react-native';
+import { Image, StatusBar, StyleSheet } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { DrawerActions, useNavigation } from '@react-navigation/native';
@@ -7,48 +7,56 @@ const DrawerScreenHeader = () => {
   const navigation = useNavigation();
 
   return (
-    <LinearGradient
-      colors={[ '#FB0860', '#FD7B26' ]}
-      start={{ x: 0, y: 1 }}
-      end={{ x: 1, y: 0 }}
-      style={styles.container}
-    >
-      <TouchableOpacity
-        onPress={() => navigation.goBack()}
-        style={styles.alignSelfStart}
-      >
-        <Image
-          source={require('src/assets/icons/back.png')}
-          style={styles.imageIconBack}
-        />
-      </TouchableOpacity>
-
-      <Image
-        source={require('src/assets/logos/burns-logo.png')}
-        style={styles.burnsLogo}
+    <>
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor="transparent"
+        translucent
       />
-
-      {/* Button to open or close the drawer image on the rigth */}
-      <TouchableOpacity
-        onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
-        style={styles.alignSelfEnd}
+      <LinearGradient
+        colors={[ '#FB0860', '#FD7B26' ]}
+        start={{ x: 0, y: 1 }}
+        end={{ x: 1, y: 0 }}
+        style={styles.container}
       >
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          style={styles.alignSelfStart}
+        >
+          <Image
+            source={require('src/assets/icons/back.png')}
+            style={styles.imageIconBack}
+          />
+        </TouchableOpacity>
+
         <Image
-          source={require('src/assets/icons/menu.png')}
-          style={styles.imageIconMenu}
+          source={require('src/assets/logos/burns-logo.png')}
+          style={styles.burnsLogo}
         />
-      </TouchableOpacity>
-    </LinearGradient>
+
+        {/* Button to open or close the drawer image on the rigth */}
+        <TouchableOpacity
+          onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
+          style={styles.alignSelfEnd}
+        >
+          <Image
+            source={require('src/assets/icons/menu.png')}
+            style={styles.imageIconMenu}
+          />
+        </TouchableOpacity>
+      </LinearGradient>
+    </>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    height: 60,
+    height: 80,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingHorizontal: 20
+    paddingHorizontal: 20,
+    paddingTop: StatusBar.currentHeight
   },
   alignSelfStart: {
     alignSelf: 'flex-start'

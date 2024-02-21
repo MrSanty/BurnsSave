@@ -9,7 +9,7 @@ const Definition = ({ navigation }: DefinitionProps) => {
   useNavigationChange(navigation, 2);
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={styles.container}>
       <ImageBackground
         source={require('src/assets/images/background.jpg')}
         style={styles.container}
@@ -43,7 +43,7 @@ const Definition = ({ navigation }: DefinitionProps) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1
   },
   titleContainer: {
     alignItems: 'center',
