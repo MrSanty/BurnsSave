@@ -76,35 +76,35 @@ const styles = StyleSheet.create({
     height: 270
   },
   image: {
-    width: '100%',
     height: '100%',
-    resizeMode: 'cover'
+    resizeMode: 'cover',
+    width: '100%'
   },
   card: {
-    position: 'absolute',
-    width: '100%',
-    height: '100%',
     backgroundColor: '#FAF8F9',
-    borderTopRightRadius: 45,
     borderTopLeftRadius: 45,
-    top: 230,
+    borderTopRightRadius: 45,
     paddingHorizontal: 35,
-    paddingVertical: 50
+    paddingVertical: 50,
+    position: 'absolute',
+    height: '100%',
+    top: 230,
+    width: '100%'
   },
   cardTitle: {
     alignItems: 'center',
     marginBottom: 40
   },
   title: {
+    color: '#FB0860',
     fontFamily: 'Poppins-Bold',
-    minHeight: 25,
-    maxHeight: 30,
     fontSize: 23,
-    color: '#FB0860'
+    maxHeight: 30,
+    minHeight: 25
   },
   contentContainer: {
-    display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    display: 'flex'
   },
   contentText: {
     fontFamily: 'Poppins-Regular',
@@ -117,11 +117,11 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   pressableButton: {
+    alignItems: 'center',
+    backgroundColor: '#fff',
     borderRadius: 20,
     margin: 2,
-    alignItems: 'center',
-    paddingVertical: 5,
-    backgroundColor: '#fff'
+    paddingVertical: 5
   }
 });
 
