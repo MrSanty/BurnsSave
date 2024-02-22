@@ -71,12 +71,6 @@ export const drawerRoutes: RouteDrawer[] = [
     title: 'Acerca de',
     children: null,
     show: true
-  },
-  {
-    key: 13,
-    title: 'Salir',
-    children: null,
-    show: true
   }
 ]
 
@@ -129,10 +123,10 @@ export const drawerScreenRoutes: RouteDrwerScreen[] = [
     component: InterestedPage,
     showHeader: true
   },
-  /* {
+  {
     key: 12,
     title: 'Acerca de',
     component: Clasification,
     showHeader: true
-  } */
+  }
 ]

@@ -1,6 +1,6 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { RouteDrawer } from "src/types/routes";
-import { StyleSheet, Text, TouchableWithoutFeedback, View } from "react-native";
+import { BackHandler, StyleSheet, Text, TouchableWithoutFeedback, View } from "react-native";
 import Animated from "react-native-reanimated";
 import { useRotateAnimate } from "src/hooks/useRotateAnimate";
 

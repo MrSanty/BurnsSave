@@ -50,11 +50,11 @@ const CustomMenu = () => {
                 if (route.show) {
                   return (
                     <ParentDrawerButton
+                      key={route.key}
                       returnToPreviousItem={collapseSection}
                       updateItems={onRoutePress}
                       route={route}
                       isActive={route.key === activeParent?.key || route.key === currentRoute}
-                      key={route.key}
                     />
                   )
                 }
