@@ -10,7 +10,7 @@ export const useRotateAnimate = (initialValue: number, endValue: number, isActiv
   });
 
   useEffect(() => {
-    rotation.value = withTiming(isActive ? endValue : initialValue, { duration: 200 });
+    rotation.value = withTiming(isActive ? endValue : initialValue, { duration: 300 });
   }, [isActive]);
 
   return {
