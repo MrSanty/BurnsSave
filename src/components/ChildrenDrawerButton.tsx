@@ -1,15 +1,16 @@
+import { FC } from "react";
 import { RouteDrawer } from "src/types/routes";
 import { StyleSheet, Text, View } from "react-native";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
-interface DrawerButtonProps {
+interface Props {
   childrens: RouteDrawer[],
   isActive: boolean,
   route: RouteDrawer,
   onItemPress: (route: RouteDrawer) => void
 }
 
-const ChildrenDrawerButton = ({ route, onItemPress, childrens, isActive }: DrawerButtonProps) => {
+const ChildrenDrawerButton: FC<Props> = ({ childrens, isActive, route, onItemPress }) => {
   const isLastItem = route.title === childrens[ childrens.length - 1 ].title
   const textColor = !isActive ? "#2E2F32" : isActive ? "#FB0263" : "white"
 

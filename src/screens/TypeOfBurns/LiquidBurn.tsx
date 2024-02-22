@@ -16,8 +16,8 @@ const LiquidBurn = () => {
         </Text>
       </View>
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -53,6 +53,6 @@ const styles = StyleSheet.create({
     textAlign: 'justify',
     color: '#2E2F32'
   }
-});
+})
 
 export default LiquidBurn;

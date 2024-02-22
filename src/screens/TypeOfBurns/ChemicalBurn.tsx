@@ -16,8 +16,8 @@ const ChemicalBurn = () => {
         </Text>
       </View>
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -53,6 +53,6 @@ const styles = StyleSheet.create({
     lineHeight: 27,
     textAlign: 'justify'
   }
-});
+})
 
 export default ChemicalBurn;

@@ -1,17 +1,17 @@
+import { FC } from "react";
 import { RouteDrawer } from "src/types/routes";
 import { StyleSheet, Text, TouchableWithoutFeedback, View } from "react-native";
-import Animated, { useAnimatedStyle, useSharedValue, withTiming } from "react-native-reanimated";
-import { useEffect } from "react";
+import Animated from "react-native-reanimated";
 import { useRotateAnimate } from "src/hooks/useRotateAnimate";
 
-interface DrawerParentButtonProps {
+interface Props {
   returnToPreviousItem: (item: RouteDrawer) => void;
   updateItems: (item: RouteDrawer) => void;
   route: RouteDrawer;
   isActive: boolean;
 }
 
-const ParentDrawerButton = ({ returnToPreviousItem, updateItems, route, isActive }: DrawerParentButtonProps) => {
+const ParentDrawerButton: FC<Props> = ({ returnToPreviousItem, updateItems, route, isActive }) => {
   const { animatedStyle } = useRotateAnimate(0, 180, isActive);
 
   const handlePress = () => {
@@ -46,7 +46,7 @@ const ParentDrawerButton = ({ returnToPreviousItem, updateItems, route, isActive
         </Text>
       </View>
     </TouchableWithoutFeedback>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -56,7 +56,6 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0.5,
     borderTopColor: 'white',
     borderTopWidth: 0.5,
-    display: 'flex',
     flexDirection: 'row',
     paddingVertical: 10,
     position: 'relative',
@@ -70,11 +69,11 @@ const styles = StyleSheet.create({
     width: 10
   },
   textButton: {
-    color: 'white',
     fontFamily: 'Poppins-Bold',
+    color: 'white',
     fontSize: 13,
     marginLeft: 50
-  },
-});
+  }
+})
 
 export default ParentDrawerButton;

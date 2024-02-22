@@ -1,4 +1,3 @@
-import global from 'src/styles/global';
 import LinearGradient from 'react-native-linear-gradient';
 import {
   Image,
@@ -8,7 +7,7 @@ import {
 import ParentDrawerButton from 'src/components/ParentDrawerButton';
 import ChildrenDrawerButton from 'src/components/ChildrenDrawerButton';
 import { RouteDrawer } from 'src/types/routes';
-import useDrawerMenu from 'src/hooks/useDrawerMenu';
+import { useDrawerMenu } from 'src/hooks/useDrawerMenu';
 import { useRouteContext } from 'src/hooks/useRouteContext';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { TouchableOpacity } from 'react-native-gesture-handler';
@@ -19,17 +18,16 @@ const CustomMenu = () => {
     listRoutes,
     activeParent,
     onRoutePress,
-    returnToPreviousItem,
+    collapseSection,
     closeDrawer
   } = useDrawerMenu();
-
 
   return (
     <LinearGradient
       colors={[ '#FB0362', '#FFC203' ]}
       start={{ x: 0, y: 0.1 }}
       end={{ x: 1, y: 0.9 }}
-      style={global.flex}
+      style={styles.flex}
     >
       <SafeAreaView>
         <View style={styles.logoContainer}>
@@ -45,8 +43,6 @@ const CustomMenu = () => {
           <Image source={require('src/assets/logos/logo.png')} style={styles.logo} />
         </View>
 
-
-
         <View style={styles.containerDrawer}>
           <View style={styles.widthFull}>
             {
@@ -54,7 +50,7 @@ const CustomMenu = () => {
                 if (route.show) {
                   return (
                     <ParentDrawerButton
-                      returnToPreviousItem={returnToPreviousItem}
+                      returnToPreviousItem={collapseSection}
                       updateItems={onRoutePress}
                       route={route}
                       isActive={route.key === activeParent?.key}
@@ -65,7 +61,6 @@ const CustomMenu = () => {
               })
             }
           </View>
-
 
           <View style={styles.containerButtons}>
             {
@@ -84,7 +79,6 @@ const CustomMenu = () => {
           </View>
         </View>
 
-
         <View style={styles.logoUamContainer}>
           <Image source={require('src/assets/logos/uam.png')} style={styles.uamImage} />
         </View>
@@ -94,6 +88,9 @@ const CustomMenu = () => {
 }
 
 const styles = StyleSheet.create({
+  flex: {
+    flex: 1
+  },
   logoContainer: {
     alignItems: 'center',
     height: 'auto'
@@ -106,7 +103,6 @@ const styles = StyleSheet.create({
   },
   containerDrawer: {
     alignItems: 'flex-start',
-    display: 'flex',
     height: 230,
     width: '100%'
   },

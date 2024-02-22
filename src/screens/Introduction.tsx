@@ -51,8 +51,8 @@ const Introduction = () => {
         </ImageBackground>
       </View>
     </SafeAreaView>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   flexContainer: {
@@ -86,7 +86,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     marginVertical: 20,
     width: '100%',
-    display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -110,7 +109,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-SemiBold',
     color: '#fff',
     fontSize: 18,
-  },
-});
+  }
+})
 
 export default Introduction;

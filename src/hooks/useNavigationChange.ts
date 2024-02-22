@@ -11,7 +11,7 @@ export const useNavigationChange = (navigation: any, route: number) => {
     });
 
     return unsubscribe;
-  }, [ navigation ]);
+  }, [ navigation ])
 
   return;
 }

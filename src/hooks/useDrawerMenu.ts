@@ -5,7 +5,7 @@ import { useRouteContext } from 'src/hooks/useRouteContext';
 import { drawerRoutes } from 'src/routes/drawer.routes';
 import { RouteDrawer } from 'src/types/routes';
 
-const useDrawerMenu = () => {
+export const useDrawerMenu = () => {
   const navigation = useNavigation<any>();
   const { setCurrentRoute } = useRouteContext();
   const [ listRoutes, setListRoutes ] = useState<RouteDrawer[]>([]);
@@ -38,23 +38,7 @@ const useDrawerMenu = () => {
 
 
     if (route.children) {
-      let activeRoute = null;
-      const index = listRoutes.findIndex(item => item.title === route.title);
-      const updatedRoutes = listRoutes.map((item, i) => {
-        if (i === index) {
-          item.show = true;
-          activeRoute = item;
-        } 
-
-        if (i > index) {
-          item.show = false;
-        }
-
-        return item;
-      })
-
-      setActiveParent(activeRoute);
-      setListRoutes(updatedRoutes);
+      expandSection(route);
     } else {
       navigation.navigate({
         name: route.title
@@ -63,7 +47,31 @@ const useDrawerMenu = () => {
     }
   }
 
-  const returnToPreviousItem = (route: RouteDrawer) => {
+  const closeDrawer = () => {
+    navigation.dispatch(DrawerActions.closeDrawer());
+  }
+
+  const expandSection = (route: RouteDrawer) => {
+    let activeRoute = null;
+    const index = listRoutes.findIndex(item => item.title === route.title);
+    const updatedRoutes = listRoutes.map((item, i) => {
+      if (i === index) {
+        item.show = true;
+        activeRoute = item;
+      } 
+
+      if (i > index) {
+        item.show = false;
+      }
+
+      return item;
+    })
+
+    setActiveParent(activeRoute);
+    setListRoutes(updatedRoutes);
+  }
+
+  const collapseSection = (route: RouteDrawer) => {
     const updatedRoutes = listRoutes.map(item => {
       item.show = true;
       return item;
@@ -73,17 +81,11 @@ const useDrawerMenu = () => {
     setListRoutes(updatedRoutes);
   }
 
-  const closeDrawer = () => {
-    navigation.dispatch(DrawerActions.closeDrawer());
-  }
-
   return {
     listRoutes,
     activeParent,
     onRoutePress,
-    returnToPreviousItem,
+    collapseSection,
     closeDrawer
   }
-};
-
-export default useDrawerMenu;
+}

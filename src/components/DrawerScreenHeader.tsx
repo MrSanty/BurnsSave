@@ -46,8 +46,8 @@ const DrawerScreenHeader = () => {
         </TouchableOpacity>
       </LinearGradient>
     </>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -80,6 +80,6 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     width: 20
   }
-});
+})
 
 export default DrawerScreenHeader;
