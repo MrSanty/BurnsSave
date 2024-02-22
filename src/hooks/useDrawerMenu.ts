@@ -50,14 +50,11 @@ export const useDrawerMenu = () => {
 
   const expandSection = (route: RouteDrawer) => {
     let activeRoute = null;
-    const index = listRoutes.findIndex(item => item.title === route.title);
-    const updatedRoutes = listRoutes.map((item, i) => {
-      if (i === index) {
+    const updatedRoutes = listRoutes.map((item) => {
+      if (item.key === route.key) {
         item.show = true;
         activeRoute = item;
-      } 
-
-      if (i > index) {
+      } else {
         item.show = false;
       }
 

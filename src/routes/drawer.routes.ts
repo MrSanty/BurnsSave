@@ -1,14 +1,9 @@
 import Definition from "src/screens/Definition";
 import Clasification from "src/screens/Clasification/Clasification";
-/* import InHome from "screens/burnPrevention/InHome";
-import Labor from "screens/burnPrevention/Labor";
-import whatToDo from "screens/WhatToDo";
-import References from "screens/References";
-import PagesOfInterest from "screens/PagesOfInterest";
-import About from "screens/About"; */
 import StackTypeOfBurns from "src/navigation/stack/StackTypeOfBurns";  
 import { RouteDrawer, RouteDrwerScreen } from "src/types/routes";
 import Complications from "src/screens/Complications";
+import StackBurnsPrevention from "src/navigation/stack/StackBurnsPrevention";
 
 export const drawerRoutes: RouteDrawer[] = [
   {
@@ -46,20 +41,7 @@ export const drawerRoutes: RouteDrawer[] = [
   {
     key: 6,
     title: 'Prevención de la quemadura',
-    children: [
-      {
-        key: 7,
-        title: 'Hogar',
-        children: null,
-        show: true
-      },
-      {
-        key: 8,
-        title: 'Laboral',
-        children: null,
-        show: true
-      }
-    ],
+    children: null,
     show: true,
     
   },
@@ -121,16 +103,10 @@ export const drawerScreenRoutes: RouteDrwerScreen[] = [
     showHeader: true
   },
   {
-    key: 7,
-    title: 'Hogar',
-    component: Clasification,
-    showHeader: true
-  },
-  {
-    key: 8,
-    title: 'Laboral',
-    component: Clasification,
-    showHeader: true
+    key: 6,
+    title: 'Prevención de la quemadura',
+    component: StackBurnsPrevention,
+    showHeader: false
   },
   {
     key: 9,

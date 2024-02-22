@@ -38,7 +38,12 @@ const ParentDrawerButton: FC<Props> = ({ returnToPreviousItem, updateItems, rout
           )
         }
         <Text
-          style={styles.textButton}
+          style={[
+            styles.textButton,
+            {
+              fontFamily: isActive ? 'Poppins-Bold' : 'Poppins-Regular'
+            }
+          ]}
         >
           {
             route.title

@@ -53,7 +53,7 @@ const CustomMenu = () => {
                       returnToPreviousItem={collapseSection}
                       updateItems={onRoutePress}
                       route={route}
-                      isActive={route.key === activeParent?.key}
+                      isActive={route.key === activeParent?.key || route.key === currentRoute}
                       key={route.key}
                     />
                   )
