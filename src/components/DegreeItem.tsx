@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     gap: 10
   },
   content: {
-    marginLeft: 30,
+    marginLeft: 20,
   },
   textBold: {
     fontFamily: 'Poppins-Bold',
