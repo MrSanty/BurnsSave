@@ -14,7 +14,7 @@ const DrawerScreenHeader = () => {
         translucent
       />
       <LinearGradient
-        colors={[ '#FB0860', '#FD7B26' ]}
+        colors={[ '#FB0263', '#FE7C26' ]}
         start={{ x: 0, y: 1 }}
         end={{ x: 1, y: 0 }}
         style={styles.container}

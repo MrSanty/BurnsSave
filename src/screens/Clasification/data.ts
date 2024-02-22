@@ -1,4 +1,4 @@
-import { Clasification } from "src/types/routes";
+import { Clasification } from "src/types/clasification";
 
 const data: Clasification[] = [
   {
@@ -7,7 +7,8 @@ const data: Clasification[] = [
     conversesmith: "Primer grado",
     denominationABA: "Epidérmica",
     histologycLevel: "Epidermis",
-    pronostic: "No necesita injeros, debe curar espontáneamente en 7 días sin secuelas"
+    pronostic: "No necesita injeros, debe curar espontáneamente en 7 días sin secuelas",
+    maxHeigth: 95
   },
   {
     id: 2,
@@ -15,7 +16,8 @@ const data: Clasification[] = [
     conversesmith: "Segundo grado superficial",
     denominationABA: "Dérmica superficial",
     histologycLevel: "Epidermis\nDermis papilar",
-    pronostic: "Debería epidermizar espontáneamente en 15 días con secuelas estéticas. Si se complica puede profundizarse"
+    pronostic: "Debería epidermizar espontáneamente en 15 días con secuelas estéticas. Si se complica puede profundizarse",
+    maxHeigth: 128
   },
   {
     id: 3,
@@ -23,7 +25,8 @@ const data: Clasification[] = [
     conversesmith: "Segundo grado profundo",
     denominationABA: "Dérmica profunda",
     histologycLevel: "Epidermis\nDermis papilar y reticular sin afectar fanéreos profundos",
-    pronostic: "Habitualmente termina en injerto con secuelas estéticas y/o funcionales. Puede requerir escarectomía tangencial"
+    pronostic: "Habitualmente termina en injerto con secuelas estéticas y/o funcionales. Puede requerir escarectomía tangencial",
+    maxHeigth: 145
   },
   {
     id: 4,
@@ -31,7 +34,8 @@ const data: Clasification[] = [
     conversesmith: "Tercer grado",
     denominationABA: "Espesor total",
     histologycLevel: "Epidermis\nDermis e hipodermis pudiendo llegar inclusive hasta el plano muscular y óseo",
-    pronostic: "Requiere escarectomía precoz, e injerto o colgajos"
+    pronostic: "Requiere escarectomía precoz, e injerto o colgajos",
+    maxHeigth: 100
   }
 ]
 

@@ -2,7 +2,7 @@ import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-na
 import ButtonGradient from './ButtonGradient';
 import { FC, useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Clasification } from 'src/types/routes';
+import { Clasification } from 'src/types/clasification';
 
 interface Props {
   item: Clasification
@@ -18,7 +18,7 @@ const DegreeItem: FC<Props> = ({ item }) => {
   }))
 
   useEffect(() => {
-    heightValue.value = withTiming(isActive ? 145 : 0, { duration: 200 });
+    heightValue.value = withTiming(isActive ? item.maxHeigth : 0, { duration: 200 });
   }, [ isActive ])
 
   return (

@@ -7,7 +7,6 @@ import { RouteDrawer } from 'src/types/routes';
 
 export const useDrawerMenu = () => {
   const navigation = useNavigation<any>();
-  const { setCurrentRoute } = useRouteContext();
   const [ listRoutes, setListRoutes ] = useState<RouteDrawer[]>([]);
   const [ activeParent, setActiveParent ] = useState<RouteDrawer | null>(null);
 
@@ -25,7 +24,6 @@ export const useDrawerMenu = () => {
       return route;
     })
 
-    setCurrentRoute(2);
     setActiveParent(activeRoute);
     setListRoutes(listOfRoutes);
   }, [])
@@ -43,7 +41,6 @@ export const useDrawerMenu = () => {
       navigation.navigate({
         name: route.title
       })
-      setCurrentRoute(route.key as number);
     }
   }
 

@@ -1,16 +1,14 @@
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
-import Animated, { useAnimatedStyle, useSharedValue, withTiming } from "react-native-reanimated";
-import ButtonGradient from 'src/components/ButtonGradient';
 import DegreeItem from "src/components/DegreeItem";
 import { useNavigationChange } from 'src/hooks/useNavigationChange';
 import data from "./data";
 
-interface ClasificationProps {
+interface Props {
   navigation: any;
 }
 
-const Clasification: FC<ClasificationProps> = ({ navigation }) => {
+const Clasification: FC<Props> = ({ navigation }) => {
   useNavigationChange(navigation, 4);
 
   return (

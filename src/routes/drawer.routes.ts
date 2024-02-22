@@ -8,6 +8,7 @@ import PagesOfInterest from "screens/PagesOfInterest";
 import About from "screens/About"; */
 import StackTypeOfBurns from "src/navigation/stack/StackTypeOfBurns";  
 import { RouteDrawer, RouteDrwerScreen } from "src/types/routes";
+import Complications from "src/screens/Complications";
 
 export const drawerRoutes: RouteDrawer[] = [
   {
@@ -116,7 +117,7 @@ export const drawerScreenRoutes: RouteDrwerScreen[] = [
   {
     key: 5,
     title: 'Complicaciones',
-    component: Clasification,
+    component: Complications,
     showHeader: true
   },
   {
