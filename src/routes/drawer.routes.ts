@@ -1,5 +1,5 @@
 import Definition from "src/screens/Definition";
-import Clasification from "src/screens/Clasification";
+import Clasification from "src/screens/Clasification/Clasification";
 /* import InHome from "screens/burnPrevention/InHome";
 import Labor from "screens/burnPrevention/Labor";
 import whatToDo from "screens/WhatToDo";

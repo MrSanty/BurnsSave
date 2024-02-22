@@ -1,12 +1,16 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { FC, useEffect, useState } from "react";
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import Animated, { useAnimatedStyle, useSharedValue, withTiming } from "react-native-reanimated";
+import ButtonGradient from 'src/components/ButtonGradient';
+import DegreeItem from "src/components/DegreeItem";
 import { useNavigationChange } from 'src/hooks/useNavigationChange';
+import data from "./data";
 
 interface ClasificationProps {
   navigation: any;
 }
 
-const Clasification = ({ navigation }: ClasificationProps) => {
+const Clasification: FC<ClasificationProps> = ({ navigation }) => {
   useNavigationChange(navigation, 4);
 
   return (
@@ -22,13 +26,26 @@ const Clasification = ({ navigation }: ClasificationProps) => {
 
       <View style={styles.card}>
         <View style={styles.cardTitle}>
-          <Text style={styles.title}>TIPOS</Text>
-          <Text style={styles.title}>DE QUEMADURAS</Text>
+          <Text style={styles.title}>CLASIFICACIÓN</Text>
+          <Text style={styles.title}>DE LAS QUEMADURAS</Text>
+        </View>
+
+        <View style={styles.scroll}>
+          <ScrollView 
+            showsVerticalScrollIndicator={false}
+            style={styles.scroll}
+          >
+            {
+              data.map((item) => (
+                <DegreeItem key={item.id} item={item} />
+              ))
+            }
+          </ScrollView>
         </View>
       </View>
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -65,26 +82,12 @@ const styles = StyleSheet.create({
     minHeight: 25
   },
   contentContainer: {
-    alignItems: 'center',
-    display: 'flex'
+    alignItems: 'center'
   },
-  contentText: {
-    fontFamily: 'Poppins-Regular',
-    fontSize: 17,
-    textAlign: 'justify'
-  },
-  linearBorder: {
-    borderRadius: 20,
-    marginBottom: 20,
-    width: '100%'
-  },
-  pressableButton: {
-    alignItems: 'center',
-    backgroundColor: '#fff',
-    borderRadius: 20,
-    margin: 2,
-    paddingVertical: 5
+  scroll: {
+    width: '100%',
+    height: '58%'
   }
-});
+})
 
 export default Clasification;

@@ -1,15 +1,15 @@
+import { FC } from "react";
 import { View, Text, StyleSheet, Image, Pressable } from 'react-native';
 import { typesOfBurnsRoutes } from 'src/routes/typesOfBurns.routes';
-import LinearGradient from 'react-native-linear-gradient';
 import { useNavigationChange } from 'src/hooks/useNavigationChange';
+import ButtonGradient from "src/components/ButtonGradient";
 
 interface TypeOfBurnsProps {
   navigation: any;
 }
 
-const TypeOfBurns = ({ navigation }: TypeOfBurnsProps) => {
+const TypeOfBurns: FC<TypeOfBurnsProps> = ({ navigation }) => {
   useNavigationChange(navigation, 3);
-
 
   return (
     <View style={styles.container}>
@@ -28,39 +28,15 @@ const TypeOfBurns = ({ navigation }: TypeOfBurnsProps) => {
           <Text style={styles.title}>DE QUEMADURAS</Text>
         </View>
         <View style={styles.contentContainer}>
-          {typesOfBurnsRoutes.slice(1).map(route => (
-            <LinearGradient
-              colors={[ '#FB0860', '#FFC402' ]}
-              start={{ x: 0, y: 1 }}
-              end={{ x: 1, y: 0 }}
-              key={route.key}
-              style={styles.linearBorder}
-            >
-              <Pressable
+          {
+            typesOfBurnsRoutes.slice(1).map(route => (
+              <ButtonGradient
+                key={route.key}
+                text={route.title}
                 onPress={() => navigation.navigate(route.title)}
-                style={({ pressed }) => [
-                  styles.pressableButton,
-                  {
-                    backgroundColor: pressed ? 'transparent' : '#fff',
-                  },
-                  {
-                    color: pressed ? '#fff' : '#2E2F32',
-                  }
-                ]}
-              >
-                {({ pressed }) => (
-                  <Text
-                    style={{
-                      color: pressed ? '#fff' : '#2E2F32',
-                      ...styles.contentText,
-                    }}
-                  >
-                    {route.title}
-                  </Text>
-                )}
-              </Pressable>
-            </LinearGradient>
-          ))}
+              />
+            ))
+          }
         </View>
       </View>
     </View>
@@ -104,24 +80,8 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     alignItems: 'center',
-    display: 'flex'
-  },
-  contentText: {
-    fontFamily: 'Poppins-Regular',
-    fontSize: 17,
-    textAlign: 'justify'
-  },
-  linearBorder: {
-    borderRadius: 20,
-    marginBottom: 20,
-    width: '100%'
-  },
-  pressableButton: {
-    alignItems: 'center',
-    backgroundColor: '#fff',
-    borderRadius: 20,
-    margin: 2,
-    paddingVertical: 5
+    flexDirection: 'column',
+    gap: 20
   }
 });
 

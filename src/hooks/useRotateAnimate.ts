@@ -16,4 +16,4 @@ export const useRotateAnimate = (initialValue: number, endValue: number, isActiv
   return {
     animatedStyle
   }
-};
+}
