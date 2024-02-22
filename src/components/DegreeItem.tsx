@@ -1,7 +1,7 @@
 import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 import ButtonGradient from './ButtonGradient';
 import { FC, useEffect, useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 import { Clasification } from 'src/types/clasification';
 
 interface Props {
@@ -31,28 +31,53 @@ const DegreeItem: FC<Props> = ({ item }) => {
       />
       <Animated.View style={[ styles.content, heightStyle ]}>
         <Text style={styles.textRegular}>
+          <Image
+            source={require('src/assets/icons/item.png')}
+            style={styles.itemIcon}
+          />
+          {' '}
           <Text style={styles.textBold}>
             Conversesmith:
           </Text>
-          {' '}{item.conversesmith}
+          {' '}
+          {item.conversesmith}
         </Text>
         <Text style={styles.textRegular}>
+          <Image
+            source={require('src/assets/icons/item.png')}
+            style={styles.itemIcon}
+          />
+          {' '}
           <Text style={styles.textBold}>
             Denominación ABA:
           </Text>
-          {' '}{item.denominationABA}
+
+          {' '}
+          {item.denominationABA}
         </Text>
         <Text style={styles.textRegular}>
+          <Image
+            source={require('src/assets/icons/item.png')}
+            style={styles.itemIcon}
+          />
+          {' '}
           <Text style={styles.textBold}>
             Nivel Histológico:
           </Text>
-          {' '}{item.histologycLevel}
+          {' '}
+          {item.histologycLevel}
         </Text>
         <Text style={styles.textRegular}>
+          <Image
+            source={require('src/assets/icons/item.png')}
+            style={styles.itemIcon}
+          />
+          {' '}
           <Text style={styles.textBold}>
             Pronóstico:
           </Text>
-          {' '}{item.pronostic}
+          {' '}
+          {item.pronostic}
         </Text>
       </Animated.View>
     </View>
@@ -65,8 +90,7 @@ const styles = StyleSheet.create({
     gap: 10
   },
   content: {
-    paddingLeft: 10,
-    gap: 2
+    marginLeft: 30,
   },
   textBold: {
     fontFamily: 'Poppins-Bold',
@@ -78,6 +102,10 @@ const styles = StyleSheet.create({
     fontSize: 13,
     width: 'auto',
     color: '#2E2F32'
+  },
+  itemIcon: {
+    width: 10,
+    height: 10
   }
 })
 

@@ -35,7 +35,7 @@ const data: Clasification[] = [
     denominationABA: "Espesor total",
     histologycLevel: "Epidermis\nDermis e hipodermis pudiendo llegar inclusive hasta el plano muscular y óseo",
     pronostic: "Requiere escarectomía precoz, e injerto o colgajos",
-    maxHeigth: 100
+    maxHeigth: 120
   }
 ]
 
