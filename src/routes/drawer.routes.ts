@@ -4,6 +4,9 @@ import StackTypeOfBurns from "src/navigation/stack/StackTypeOfBurns";
 import { RouteDrawer, RouteDrwerScreen } from "src/types/routes";
 import Complications from "src/screens/Complications";
 import StackBurnsPrevention from "src/navigation/stack/StackBurnsPrevention";
+import StackBurnsManage from "src/navigation/stack/StackBurnsManage";
+import References from "src/screens/References";
+import InterestedPage from "src/screens/InterestedPage";
 
 export const drawerRoutes: RouteDrawer[] = [
   {
@@ -111,25 +114,25 @@ export const drawerScreenRoutes: RouteDrwerScreen[] = [
   {
     key: 9,
     title: '¿Qué hacer en caso de quemadura?',
-    component: Clasification,
-    showHeader: true
+    component: StackBurnsManage,
+    showHeader: false
   },
   {
     key: 10,
     title: 'Referencias',
-    component: Clasification,
+    component: References,
     showHeader: true
   },
   {
     key: 11,
     title: 'Páginas de interés',
-    component: Clasification,
+    component: InterestedPage,
     showHeader: true
   },
-  {
+  /* {
     key: 12,
     title: 'Acerca de',
     component: Clasification,
     showHeader: true
-  }
+  } */
 ]

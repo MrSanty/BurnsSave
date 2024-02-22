@@ -1,14 +1,8 @@
 import { FC } from "react";
 import { ImageBackground, StyleSheet, Text, View } from 'react-native';
-import { useNavigationChange } from 'src/hooks/useNavigationChange';
 
-interface Props {
-  navigation: any;
-}
 
-const Home: FC<Props> = ({ navigation }) => {
-  useNavigationChange(navigation, 2);
-
+const Home: FC = () => {
   return (
     <View style={styles.container}>
       <ImageBackground

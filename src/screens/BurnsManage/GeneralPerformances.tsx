@@ -2,8 +2,7 @@ import { FC } from "react";
 import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 
 
-const Labor: FC = () => {
-
+const GeneralPerformances: FC = () => {
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -11,11 +10,11 @@ const Labor: FC = () => {
         style={styles.container}
       >
         <View style={styles.titleContainer}>
-          <Text style={styles.title}>LABORAL</Text>
+          <Text style={styles.title}>Actuaciones generales:</Text>
         </View>
         <View style={styles.contentContainer}>
           <Text style={styles.contentText}>
-            Se recomienda seguir realizando campañas educativas encaminadas a la prevención y concientización del control de los factores de riesgo en el contexto laboral frente a la exposición que implica el incumplimiento de las normas de seguridad propias de cada profesión u ocupación desempeñada, el uso de equipamientos de protección personal y ropa ignífuga en actividades laborales de riesgo donde haya una posibilidad de exposición.
+            La asistencia inmediata del quemado es muy similar a la de cualquier accidentado con la peculiaridad de que lo primero que se debe hacer, sin olvidar nuestra propia seguridad, es parar el proceso de la quemadura; es decir, eliminar la causa.
           </Text>
         </View>
       </ImageBackground>
@@ -51,4 +50,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default Labor;
+export default GeneralPerformances;
