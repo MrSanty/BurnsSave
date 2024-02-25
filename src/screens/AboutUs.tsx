@@ -28,7 +28,7 @@ const AboutUs: FC<Props> = ({ navigation }) => {
             <CardUser name="Monica Yamile Pinzón Bernal" />
           </View>
           <View style={styles.titleContainer}>
-            <Text style={styles.title}>INVESTIGADORES</Text>
+            <Text style={styles.title}>DESARROLLADORES</Text>
           </View>
           <View style={styles.contentContainer}>
             <CardUser name="Yaneth Mejía Rendón" />

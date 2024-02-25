@@ -25,7 +25,7 @@ const CardUser: FC<Props> = ({ name }) => {
 const styles = StyleSheet.create({
   card: {
     backgroundColor: 'white',
-    width: 160,
+    width: 150,
     elevation: 4,
     borderRadius: 10,
     position: 'relative',
