@@ -7,6 +7,7 @@ import StackBurnsPrevention from "src/navigation/stack/StackBurnsPrevention";
 import StackBurnsManage from "src/navigation/stack/StackBurnsManage";
 import References from "src/screens/References";
 import InterestedPage from "src/screens/InterestedPage";
+import AboutUs from "src/screens/AboutUs";
 
 export const drawerRoutes: RouteDrawer[] = [
   {
@@ -126,7 +127,7 @@ export const drawerScreenRoutes: RouteDrwerScreen[] = [
   {
     key: 12,
     title: 'Acerca de',
-    component: Clasification,
+    component: AboutUs,
     showHeader: true
   }
 ]
