@@ -31,10 +31,7 @@ const Introduction = () => {
               <Text style={styles.contentText}>
                 Dado el problema creciente de salud pública en torno a las quemaduras el cual ha sido
                 declarado por la Organización Mundial de la Salud, se ha creado esta aplicación móvil
-                donde usted podrá consultar diferentes tipos de información.
-              </Text>
-              <Text style={styles.contentText}>
-                relacionadas con el tema.
+                donde usted podrá consultar diferentes tipos de información relacionadas con el tema.
               </Text>
             </View>
             <TouchableOpacity onPress={() => navigation.navigate('Main')} activeOpacity={0.8}>
