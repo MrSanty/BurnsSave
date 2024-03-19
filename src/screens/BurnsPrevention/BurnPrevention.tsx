@@ -1,6 +1,9 @@
 import { FC } from "react";
 import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 import ButtonGradient from "src/components/ButtonGradient";
+import Card from "src/components/Card";
+import Podcast from "src/components/Podcast";
+import YoutubePlayer from "src/components/YoutubePlayer";
 import { useNavigationChange } from 'src/hooks/useNavigationChange';
 
 interface Props {
@@ -35,6 +38,20 @@ const BurnPrevention: FC<Props> = ({ navigation }) => {
               onPress={() => navigation.navigate('Hogar')}
             />
           </View>
+
+          <Card title='Podcast'>
+            <Podcast
+              url='https://audio.jukehost.co.uk/H8RMWfdpikFfgC9SfIdT1eqJHi8Rba88'
+              title='Podcast 2'
+              artist='Anónimo'
+            />
+          </Card>
+
+          <Card title="Video">
+            <View style={{ height: 200 }}>
+              <YoutubePlayer videoId="9k8c8JYJ2o8" />
+            </View>
+          </Card>
         </View>
       </ImageBackground>
     </View>

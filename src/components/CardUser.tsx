@@ -2,22 +2,33 @@ import { FC } from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native'
 
 interface Props {
+  urlImage: any;
   name: string;
+  fullWidth?: boolean;
+  text?: string;
 }
 
 
-const CardUser: FC<Props> = ({ name }) => {
+const CardUser: FC<Props> = ({ urlImage, name, fullWidth, text }) => {
   return (
-      <View style={styles.card}>
+      <View style={[styles.card, fullWidth && { width: '100%' }]}>
         <View style={styles.photoCard}>
           <Image
-            source={require('src/assets/icons/icon.png')}
+            source={urlImage}
             style={styles.profile}
           />
         </View>
         <View style={styles.titleCard}>
           <Text style={styles.titleC}>{name}</Text>
         </View>
+
+        {
+          fullWidth && (
+            <View style={styles.bodyCard}>
+              <Text style={styles.textC}>{text}</Text>
+            </View>
+          )
+        }
       </View>
   )
 }
@@ -39,7 +50,7 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84
   },
   titleCard: {
-    paddingVertical: 10,
+    paddingVertical: 5,
     paddingHorizontal: 5
   },
   photoCard: {
@@ -59,6 +70,15 @@ const styles = StyleSheet.create({
     maxWidth: 80,
     overflow: 'hidden',
     resizeMode: "contain"
+  },
+  bodyCard: {
+    padding: 5
+  },
+  textC: {
+    fontFamily: 'Poppins-Regular',
+    fontSize: 14,
+    color: '#000',
+    textAlign: 'center'
   }
 })
 
