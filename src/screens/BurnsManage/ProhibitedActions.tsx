@@ -32,7 +32,7 @@ const ProhibitedActions: FC = () => {
                 style={styles.itemIcon}
               />
               <Text style={styles.listText}>
-              No efectuaremos remedios caseros como aplicar grasas, pasta de dientes, aceite, vinagre, etc.
+              No aplicaremos remedios caseros como grasas, pasta de dientes, aceite, vinagre, etc.
               </Text>
             </View>
             <View style={styles.listContainer}>
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
   listContainer: {
     paddingRight: 15,
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     gap: 5,
     marginBottom: 10
   },

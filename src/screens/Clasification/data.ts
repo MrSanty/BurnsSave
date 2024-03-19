@@ -15,7 +15,7 @@ const data: Clasification[] = [
     title: "Segundo grado superficial",
     conversesmith: "Segundo grado superficial",
     denominationABA: "Dérmica superficial",
-    histologycLevel: "Epidermis\nDermis papilar",
+    histologycLevel: "Epidermis Dermis papilar",
     pronostic: "Debería epidermizar espontáneamente en 15 días con secuelas estéticas. Si se complica puede profundizarse",
     maxHeigth: 140
   },
@@ -24,7 +24,7 @@ const data: Clasification[] = [
     title: "Segundo grado profundo",
     conversesmith: "Segundo grado profundo",
     denominationABA: "Dérmica profunda",
-    histologycLevel: "Epidermis\nDermis papilar y reticular sin afectar fanéreos profundos",
+    histologycLevel: "Epidermis Dermis papilar",
     pronostic: "Habitualmente termina en injerto con secuelas estéticas y/o funcionales. Puede requerir escarectomía tangencial",
     maxHeigth: 160
   },
@@ -33,7 +33,7 @@ const data: Clasification[] = [
     title: "Tercer grado",
     conversesmith: "Tercer grado",
     denominationABA: "Espesor total",
-    histologycLevel: "Epidermis\nDermis e hipodermis pudiendo llegar inclusive hasta el plano muscular y óseo",
+    histologycLevel: "Epidermis o tejido celular subcutáneo",
     pronostic: "Requiere escarectomía precoz, e injerto o colgajos",
     maxHeigth: 140
   }

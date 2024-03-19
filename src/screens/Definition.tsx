@@ -21,7 +21,7 @@ const Definition: FC<Props> = ({ navigation }) => {
         </View>
         <View style={styles.contentContainer}>
           <Text style={styles.contentText}>
-            Las quemaduras son un trauma directo sobre la piel muy otro tejido primario que puede
+            Las quemaduras son un trauma directo sobre la piel o tejido primario que puede
             ser causada por diferentes agentes como productos químicos, líquidos y sólidos calientes
             o aquellos agentes que producen llamas.
           </Text>

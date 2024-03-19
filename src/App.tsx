@@ -16,7 +16,7 @@ const App = () => {
     setTimeout(() => {
       SplashScreen.hide();
     }, 500);
-  });
+  }, []);
 
   return (
     <RouteContext.Provider value={{ currentRoute, setCurrentRoute }}>

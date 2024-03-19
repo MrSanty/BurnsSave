@@ -22,7 +22,7 @@ const BurnManage: FC<Props> = ({ navigation }) => {
         </View>
         <View style={styles.contentContainer}>
           <Text style={styles.contentText}>
-            La asistencia inmediata del quemado es muy similar a la de cualquier accidentado con la peculiaridad de qué lo primero que se debe hacer, si no olvida nuestra propia seguridad, es parar el proceso de la quemadura; es decir, eliminar la causa.
+            La asistencia inmediata del quemado es muy similar a la de cualquier accidentado con la peculiaridad de que lo primero que se debe hacer, si no olvida nuestra propia seguridad, es parar el proceso de la quemadura; es decir, eliminar la causa.
           </Text>
 
           <View style={styles.buttonContainer}>

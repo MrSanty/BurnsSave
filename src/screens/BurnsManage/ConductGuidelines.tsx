@@ -73,7 +73,7 @@ const ConductGuidelines: FC = () => {
                 style={styles.itemIcon}
               />
               <Text style={styles.listText}>
-                En quemaduras graves que afecten a los dedos, colocaremos gasas húmedas estériles entre ellos para evitar que se adhieran. Si las quemaduras afectan a las extremidades, las mantendremos elevadas para evitar que se hinchen (edemas).
+                En quemaduras graves que afecten a los dedos, colocaremos gasas húmedas estériles entre ellos para evitar que se adhieran. Si las quemaduras afectan a las extremidades, las mantendremos elevadas para evitar que se inflamen (edemas).
               </Text>
             </View>
             <View style={styles.listContainer}>
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
   listContainer: {
     paddingRight: 15,
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     gap: 5,
     marginBottom: 10
   },
