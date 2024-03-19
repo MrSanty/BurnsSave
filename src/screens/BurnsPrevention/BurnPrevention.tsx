@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { ImageBackground, StyleSheet, Text, View } from 'react-native';
+import { ScrollView } from "react-native-gesture-handler";
 import ButtonGradient from "src/components/ButtonGradient";
 import Card from "src/components/Card";
 import Podcast from "src/components/Podcast";
@@ -24,34 +25,39 @@ const BurnPrevention: FC<Props> = ({ navigation }) => {
           <Text style={styles.title}>LAS QUEMADURAS</Text>
         </View>
         <View style={styles.contentContainer}>
-          <Text style={styles.contentText}>z
-            La prevención se constituye en la estrategia para evitar o disminuir la prevalencia en la presentación de las quemaduras en los diferentes grupos etarios y especialmente en la población pediátrica que es la más susceptible vulnerable en presentar estos eventos traumáticos
-          </Text>
+          <ScrollView
+            showsVerticalScrollIndicator={false}
+            style={styles.scroll}
+          >
+            <Text style={styles.contentText}>z
+              La prevención se constituye en la estrategia para evitar o disminuir la prevalencia en la presentación de las quemaduras en los diferentes grupos etarios y especialmente en la población pediátrica que es la más susceptible vulnerable en presentar estos eventos traumáticos
+            </Text>
 
-          <View style={styles.buttonContainer}>
-            <ButtonGradient
-              text="Laboral"
-              onPress={() => navigation.navigate('Laboral')}
-            />
-            <ButtonGradient
-              text="Hogar"
-              onPress={() => navigation.navigate('Hogar')}
-            />
-          </View>
-
-          <Card title='Podcast'>
-            <Podcast
-              url='https://audio.jukehost.co.uk/H8RMWfdpikFfgC9SfIdT1eqJHi8Rba88'
-              title='Podcast 2'
-              artist='Anónimo'
-            />
-          </Card>
-
-          <Card title="Video">
-            <View style={{ height: 200 }}>
-              <YoutubePlayer videoId="9k8c8JYJ2o8" />
+            <View style={styles.buttonContainer}>
+              <ButtonGradient
+                text="Laboral"
+                onPress={() => navigation.navigate('Laboral')}
+              />
+              <ButtonGradient
+                text="Hogar"
+                onPress={() => navigation.navigate('Hogar')}
+              />
             </View>
-          </Card>
+
+            <Card title='Podcast'>
+              <Podcast
+                url='https://audio.jukehost.co.uk/H8RMWfdpikFfgC9SfIdT1eqJHi8Rba88'
+                title='Podcast 2'
+                artist='Anónimo'
+              />
+            </Card>
+
+            <Card title="Video">
+              <View style={{ height: 200 }}>
+                <YoutubePlayer videoId="9k8c8JYJ2o8" />
+              </View>
+            </Card>
+          </ScrollView>
         </View>
       </ImageBackground>
     </View>
@@ -60,13 +66,11 @@ const BurnPrevention: FC<Props> = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
+    flex: 1
   },
   titleContainer: {
     alignItems: 'center',
-    marginBottom: 30
+    paddingVertical: 20
   },
   title: {
     fontFamily: 'Poppins-Bold',
@@ -75,7 +79,8 @@ const styles = StyleSheet.create({
     color: '#FB0263'
   },
   contentContainer: {
-    paddingHorizontal: 25
+    paddingHorizontal: 25,
+    flex: 1,
   },
   contentText: {
     fontFamily: 'Poppins-Regular',
@@ -85,7 +90,11 @@ const styles = StyleSheet.create({
     marginBottom: 20
   },
   buttonContainer: {
-    gap: 10
+    gap: 10,
+    marginBottom: 20
+  },
+  scroll: {
+    flexGrow: 0
   }
 })
 

@@ -6,6 +6,7 @@ import DrawerMenu from 'src/navigation/drawer/DrawerMenu';
 import { RouteContext } from 'src/context/RouteProvider';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import TrackPlayer from 'react-native-track-player';
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -14,6 +15,8 @@ const App = () => {
 
   useEffect(() => {
     setTimeout(() => {
+      TrackPlayer.registerPlaybackService(() => require('./utils/TrackerSevice'));
+      TrackPlayer.setupPlayer();
       SplashScreen.hide();
     }, 500);
   }, []);
