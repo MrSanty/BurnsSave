@@ -41,13 +41,11 @@ const Complications: FC<Props> = ({ navigation }) => {
             <ComplicationItem
               title="Funcionales"
               content="están asociadas a la perdida de los rangos de movilidad articular, amputaciones, disminución de la apertura de la boca, perdida de la audición y la visión, entre otras; en general son aquellas que pueden provocar algún grado de discapacidad y perdida de la independencia."
-              maxHeigth={120}
             />
             <ComplicationItem
               title="Estéticas"
               content="son aquellas que afectan la imagen y el esquema corporal, afectan tanto la calidad de vida y el bienestar emocional de quien la padece. Pueden estar provocadas por cicatrices, deformidades y alteraciones en la pigmentación de la piel."
               secondContent="Las secuelas estéticas de las quemaduras, además de estar asociadas con las secuelas funcionales, llevan a la persona a aislamiento debido al miedo o al rechazo y a los problemas psicológicos y emocionales derivados de esta lesión."
-              maxHeigth={200}
             />
           </ScrollView>
         </View>
@@ -91,12 +89,8 @@ const styles = StyleSheet.create({
     maxHeight: 30,
     minHeight: 25
   },
-  contentContainer: {
-    alignItems: 'center'
-  },
   scroll: {
-    width: '100%',
-    height: '43%'
+    flex: 1/2
   }
 })
 

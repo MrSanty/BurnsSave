@@ -5,5 +5,4 @@ export interface Clasification {
   denominationABA: string;
   histologycLevel: string;
   pronostic: string;
-  maxHeigth: number;
 }

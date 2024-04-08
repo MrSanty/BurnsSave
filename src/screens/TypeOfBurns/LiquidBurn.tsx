@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 const LiquidBurn = () => {
   return (
@@ -9,11 +9,13 @@ const LiquidBurn = () => {
         <View style={styles.contentTitle}>
           <Text style={styles.title}>Líquido caliente o escaldaduras</Text>
         </View>
-        <Text style={styles.content}>
-          Se producen por infusiones con sopas, líquidos calientes, durante el baño llevando a
-          diferentes tipos de profundidad dependiendo del tipo de exposición. Se puede producir
-          también por aceite caliente y grasas que pueden generar quemaduras de espesores completos.
-        </Text>
+        <ScrollView style={styles.scroll}>
+          <Text style={styles.content}>
+            Se producen por infusiones con sopas, líquidos calientes, durante el baño llevando a
+            diferentes tipos de profundidad dependiendo del tipo de exposición. Se puede producir
+            también por aceite caliente y grasas que pueden generar quemaduras de espesores completos.
+          </Text>
+        </ScrollView>
       </View>
     </View>
   )
@@ -32,7 +34,8 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start'
   },
   textContainer: {
-    padding: 30
+    padding: 30,
+    flex: 1
   },
   contentTitle: {
     marginBottom: 30,
@@ -52,6 +55,9 @@ const styles = StyleSheet.create({
     lineHeight: 27,
     textAlign: 'justify',
     color: '#2E2F32'
+  },
+  scroll: {
+    flexGrow: 0
   }
 })
 

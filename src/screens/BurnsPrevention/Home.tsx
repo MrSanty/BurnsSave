@@ -21,7 +21,7 @@ const Home: FC = () => {
           </View>
           <View style={styles.contentContainer}>
             <ScrollView
-              style={{ height: '61%' }}
+              style={{ flexGrow: 0 }}
             >
               <Text style={styles.contentText}>
                 Entre las recomendaciones dadas por la OMS se encuentran elevar o cerrar las áreas de cocina, usar la electricidad para la cocción de los alimentos en vez de velas y queroseno, rediseñar las estufas para que proporcionen mayor seguridad, mejorar la construcción de viviendas e instalación de detectores de humo en los hogares y edificaciones públicas y privadas.
@@ -74,7 +74,8 @@ const styles = StyleSheet.create({
   contentContainer: {
     alignItems: 'center',
     flexDirection: 'column',
-    gap: 10
+    gap: 10,
+    flex: 5/7
   },
   contentText: {
     fontFamily: 'Poppins-Regular',

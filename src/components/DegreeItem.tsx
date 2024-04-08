@@ -10,15 +10,15 @@ interface Props {
 
 const DegreeItem: FC<Props> = ({ item }) => {
   const [ isActive, setIsActive ] = useState(false);
-  const heightValue = useSharedValue(0);
+  const heightValue = useSharedValue(0)
 
   const heightStyle = useAnimatedStyle(() => ({
-    height: heightValue.value,
+    maxHeight: `${heightValue.value}%`,
     overflow: 'hidden'
   }))
 
   useEffect(() => {
-    heightValue.value = withTiming(isActive ? item.maxHeigth : 0, { duration: 200 });
+    heightValue.value = withTiming(isActive ? 100 : 0, { duration: 200 });
   }, [ isActive ])
 
   return (

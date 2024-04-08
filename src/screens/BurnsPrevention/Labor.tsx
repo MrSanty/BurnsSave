@@ -21,7 +21,7 @@ const Labor: FC = () => {
         </View>
         <View style={styles.contentContainer}>
           <ScrollView
-            style={{ height: '61%' }}
+            style={{ flexGrow: 0 }}
           >
             <Text style={styles.contentText}>
             Se recomienda seguir realizando campañas educativas encaminadas a la prevención y concientización del control de los factores de riesgo en el contexto laboral frente a la exposición que implica el incumplimiento de las normas de seguridad propias de cada profesión u ocupación desempeñada, el uso de equipamientos de protección personal y ropa ignífuga en actividades laborales de riesgo donde haya una posibilidad de exposición.
@@ -69,7 +69,8 @@ const styles = StyleSheet.create({
   contentContainer: {
     alignItems: 'center',
     flexDirection: 'column',
-    gap: 10
+    gap: 10,
+    flex: 1
   },
   contentText: {
     fontFamily: 'Poppins-Regular',

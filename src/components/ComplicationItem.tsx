@@ -6,20 +6,19 @@ import { StyleSheet, Text, View } from 'react-native';
 interface Props {
   title: string;
   content: string;
-  maxHeigth: number;
   secondContent?: string;
 }
 
-const ComplicationItem: FC<Props> = ({ title, content, maxHeigth, secondContent }) => {
+const ComplicationItem: FC<Props> = ({ title, content, secondContent }) => {
   const [ isActive, setIsActive ] = useState(false);
   const heightValue = useSharedValue(0);
 
   const heightStyle = useAnimatedStyle(() => ({
-    height: heightValue.value
+    maxHeight: `${heightValue.value}%`
   }))
 
   useEffect(() => {
-    heightValue.value = withTiming(isActive ? maxHeigth : 0, { duration: 200 });
+    heightValue.value = withTiming(isActive ? 100 : 0, { duration: 300 })
   }, [ isActive ])
 
   return (

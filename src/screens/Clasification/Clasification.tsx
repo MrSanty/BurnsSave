@@ -79,12 +79,8 @@ const styles = StyleSheet.create({
     maxHeight: 30,
     minHeight: 25
   },
-  contentContainer: {
-    alignItems: 'center'
-  },
   scroll: {
-    width: '100%',
-    height: '58%'
+    flex: 5/7
   }
 })
 

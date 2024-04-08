@@ -7,8 +7,7 @@ const data: Clasification[] = [
     conversesmith: "Primer grado",
     denominationABA: "Epidérmica",
     histologycLevel: "Epidermis",
-    pronostic: "No necesita injeros, debe curar espontáneamente en 7 días sin secuelas",
-    maxHeigth: 110
+    pronostic: "No necesita injeros, debe curar espontáneamente en 7 días sin secuelas"
   },
   {
     id: 2,
@@ -16,8 +15,7 @@ const data: Clasification[] = [
     conversesmith: "Segundo grado superficial",
     denominationABA: "Dérmica superficial",
     histologycLevel: "Epidermis Dermis papilar",
-    pronostic: "Debería epidermizar espontáneamente en 15 días con secuelas estéticas. Si se complica puede profundizarse",
-    maxHeigth: 140
+    pronostic: "Debería epitelizar espontáneamente en 15 días con secuelas estéticas. Si se complica puede profundizarse"
   },
   {
     id: 3,
@@ -25,8 +23,7 @@ const data: Clasification[] = [
     conversesmith: "Segundo grado profundo",
     denominationABA: "Dérmica profunda",
     histologycLevel: "Epidermis Dermis papilar",
-    pronostic: "Habitualmente termina en injerto con secuelas estéticas y/o funcionales. Puede requerir escarectomía tangencial",
-    maxHeigth: 160
+    pronostic: "Habitualmente termina en injerto con secuelas estéticas y/o funcionales. Puede requerir escarectomía tangencial"
   },
   {
     id: 4,
@@ -34,8 +31,7 @@ const data: Clasification[] = [
     conversesmith: "Tercer grado",
     denominationABA: "Espesor total",
     histologycLevel: "Epidermis o tejido celular subcutáneo",
-    pronostic: "Requiere escarectomía precoz, e injerto o colgajos",
-    maxHeigth: 140
+    pronostic: "Requiere escarectomía precoz, e injerto o colgajos"
   }
 ]
 
