@@ -29,7 +29,7 @@ const BurnPrevention: FC<Props> = ({ navigation }) => {
             showsVerticalScrollIndicator={false}
             style={styles.scroll}
           >
-            <Text style={styles.contentText}>z
+            <Text style={styles.contentText}>
               La prevención se constituye en la estrategia para evitar o disminuir la prevalencia en la presentación de las quemaduras en los diferentes grupos etarios y especialmente en la población pediátrica que es la más susceptible vulnerable en presentar estos eventos traumáticos
             </Text>
 
@@ -54,7 +54,7 @@ const BurnPrevention: FC<Props> = ({ navigation }) => {
 
             <Card title="Video">
               <View style={{ height: 200 }}>
-                <YoutubePlayer videoId="9k8c8JYJ2o8" />
+                <YoutubePlayer videoId="Pr_gCOyS2H8" />
               </View>
             </Card>
           </ScrollView>
