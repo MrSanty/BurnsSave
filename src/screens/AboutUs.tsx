@@ -18,36 +18,41 @@ const AboutUs: FC<Props> = ({ navigation }) => {
         style={styles.container}
       >
         <ScrollView
+          style={{ flexGrow: 0 }}
           showsVerticalScrollIndicator={false}
         >
           <View style={styles.titleContainer}>
-            <Text style={styles.title}>INVESTIGADORES</Text>
+            <Text style={styles.title}>EXPERTAS TEMATICAS</Text>
           </View>
-          <View style={styles.contentContainer}>
+          <View style={styles.mainContainer}>
             <CardUser
-              urlImage={require('src/assets/icons/icon.png')}
+              urlImage={require('src/assets/images/julialba.jpeg')}
               name="Julialba Castellanos Ruiz"
+              email="jcastellanos@autonoma.edu.co"
+              cvlac="https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001144502"
             />
             <CardUser
-              urlImage={require('src/assets/icons/icon.png')}
+              urlImage={require('src/assets/images/monica.jpeg')}
               name="Monica Yamile Pinzón Bernal"
+              email="myamile@autonoma.edu.co"
+              cvlac="https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001152904"
             />
           </View>
           <View style={styles.titleContainer}>
-            <Text style={styles.title}>DESARROLLADORES</Text>
+            <Text style={styles.title}>EQUIPO DE DESARROLLO</Text>
           </View>
-          <View style={styles.secondContainer}>
+          <View style={[styles.mainContainer, { paddingBottom: 20 } ]}>
             <CardUser
-              urlImage={require('src/assets/icons/icon.png')}
+              urlImage={require('src/assets/images/Carlos.jpeg')}
               name="Carlos Andrés Zapata"
-              text="FullStack Developer"
-              fullWidth
+              email="czapata@autonoma.edu.co"
+              cvlac="https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000814342"
             />
             <CardUser
               urlImage={require('src/assets/images/Santiago.jpg')}
               name="Santiago Quintero Rodriguez"
-              text="FullStack Developer"
-              fullWidth
+              email="santiagoquinteror@autonoma.edu.co"
+              cvlac="https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002213219"
             />
           </View>
         </ScrollView>
@@ -70,12 +75,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#FB0263'
   },
-  contentContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingHorizontal: 20
-  },
-  secondContainer: {
+  mainContainer: {
     flexDirection: 'column',
     gap: 10,
     paddingHorizontal: 25

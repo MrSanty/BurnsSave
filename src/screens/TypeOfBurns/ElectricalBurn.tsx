@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 const ElectricalBurn = () => {
   return (
@@ -9,11 +9,13 @@ const ElectricalBurn = () => {
         <View style={styles.contentTitle}>
           <Text style={styles.title}>Quemaduras eléctricas</Text>
         </View>
-        <Text style={styles.content}>
-          Una quemadura eléctrica es una quemadura de la piel que se produce cuando el cuerpo entra
+        <ScrollView style={styles.scroll}>
+          <Text style={styles.content}>
+            Una quemadura eléctrica es una quemadura de la piel que se produce cuando el cuerpo entra
           en contacto con electricidad. Cuando esto sucede, la electricidad puede transmitirse por
           todo el cuerpo, lo cual puede causar daños en tejidos y órganos.
-        </Text>
+          </Text>
+        </ScrollView>
       </View>
     </View>
   )
@@ -52,6 +54,9 @@ const styles = StyleSheet.create({
     lineHeight: 27,
     textAlign: 'justify',
     color: '#2E2F32'
+  },
+  scroll: {
+    flexGrow: 0
   }
 })
 

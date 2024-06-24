@@ -12,7 +12,7 @@ const DrawerMenu = () => {
         header: props => <DrawerScreenHeader />,
         drawerStyle: {
           backgroundColor: '#ebebeb',
-          height: '76%',
+          height: '78%',
           width: '80%',
           shadowColor: '#000000',
           shadowOffset: {

@@ -72,6 +72,12 @@ export const drawerRoutes: RouteDrawer[] = [
     title: 'Acerca de',
     children: null,
     show: true
+  },
+  {
+    key: 13,
+    title: 'Salir',
+    children: null,
+    show: true
   }
 ]
 
@@ -129,5 +135,11 @@ export const drawerScreenRoutes: RouteDrwerScreen[] = [
     title: 'Acerca de',
     component: AboutUs,
     showHeader: true
+  },
+  {
+    key: 13,
+    title: 'Salir',
+    component: null,
+    showHeader: false
   }
 ]

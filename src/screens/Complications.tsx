@@ -1,8 +1,9 @@
 import { FC } from "react";
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 import { useNavigationChange } from 'src/hooks/useNavigationChange';
 import LinearGradient from "react-native-linear-gradient";
 import ComplicationItem from "src/components/ComplicationItem";
+import { ScrollView } from "react-native-gesture-handler";
 
 interface Props {
   navigation: any;
@@ -33,7 +34,7 @@ const Complications: FC<Props> = ({ navigation }) => {
           <Text style={styles.title}>DE LAS QUEMADURAS</Text>
         </View>
 
-        <View style={styles.scroll}>
+        <View style={styles.containerContent}>
           <ScrollView 
             showsVerticalScrollIndicator={false}
             style={styles.scroll}
@@ -89,8 +90,12 @@ const styles = StyleSheet.create({
     maxHeight: 30,
     minHeight: 25
   },
+  containerContent: {
+    flex: 1/2,
+    paddingBottom: 10
+  },
   scroll: {
-    flex: 1/2
+    flexGrow: 0
   }
 })
 

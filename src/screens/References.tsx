@@ -34,7 +34,7 @@ const References: FC<Props> = ({ navigation }) => {
               style={styles.itemIcon}
             />
             <Text style={styles.listText}>
-              Secretaría de Estado de la Seguridad Social Gobierno de España. (2020). MANUAL DE PRIMEROS AUXILIO EN LA EMPRESA. MC MUTUAL.
+              Secretaría de Estado de la Seguridad Social Gobierno de España. (2020). Manual de primeros auxilios en la empresa. MC Mutual.
             </Text>
           </View>
           <View style={styles.listContainer}>
@@ -44,6 +44,24 @@ const References: FC<Props> = ({ navigation }) => {
             />
             <Text style={styles.listText}>
               Jeschke MG, van Baar ME, Choudhry MA, Chung KK, Gibran NS, Logsetty S. Burn injury. Nat Rev Dis Primers. 2020 Feb 13;6(1):11. doi: 10.1038/s41572-020-0145-5. PMID: 32054846; PMCID: PMC7224101.
+            </Text>
+          </View>
+          <View style={styles.listContainer}>
+            <Image
+              source={require('src/assets/icons/item.png')}
+              style={styles.itemIcon}
+            />
+            <Text style={styles.listText}>
+              Castellanos Ruíz, J., y Pinzón Bernal, M. Y. El ejercicio terapéutico en paciente pediátrico quemado. Movimiento científico, 6(1), 92-100. 2012.
+            </Text>
+          </View>
+          <View style={styles.listContainer}>
+            <Image
+              source={require('src/assets/icons/item.png')}
+              style={styles.itemIcon}
+            />
+            <Text style={styles.listText}>
+              Castellanos Ruiz, J. Pinzón Bernal, MY. Manejo fisioterapeutico del dolor en personas quemadas en sus tres fases de recuperación: revisión sistemática. Rev. Soc. Esp. Dolor. 2016, vol.23, n.4, pp.202-210. ISSN 1134-8046.
             </Text>
           </View>
         </View>

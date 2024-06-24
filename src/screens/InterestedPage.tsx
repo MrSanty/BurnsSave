@@ -1,5 +1,7 @@
+import { Link } from "@react-navigation/native";
 import { FC } from "react";
 import { Image, ImageBackground, Linking, Pressable, StyleSheet, Text, View } from 'react-native';
+import { LinkText } from "src/components/Link";
 import { useNavigationChange } from 'src/hooks/useNavigationChange';
 
 interface Props {
@@ -24,24 +26,20 @@ const InterestedPage: FC<Props> = ({ navigation }) => {
               source={require('src/assets/icons/item.png')}
               style={styles.itemIcon}
             />
-            <Pressable
-              onPress={() => Linking.openURL('https://www.who.int/news-room/fact-sheets/detail/burns')}
-            >
-              {
-                ({pressed}) => (
-                  <Text
-                    style={[
-                      styles.listText,
-                      {
-                        color: pressed ? '#FB0263' : '#2E2F32'
-                      }
-                    ]}
-                  >
-                    https://www.who.int/news-room/fact-sheets/detail/burns.
-                  </Text>
-                )
-              }
-            </Pressable>
+            <LinkText
+              name="https://www.who.int/news-room/fact-sheets/detail/burns"
+              url="https://www.who.int/news-room/fact-sheets/detail/burns"
+            />
+          </View>
+          <View style={styles.listContainer}>
+            <Image
+              source={require('src/assets/icons/item.png')}
+              style={styles.itemIcon}
+            />
+            <LinkText
+              name="Myhealth ministry of health malaysia"
+              url="http://www.myhealth.gov.my/en/physiotherapy-management-burns-injury/"
+            />
           </View>
         </View>
       </ImageBackground>
@@ -80,12 +78,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 5,
     marginBottom: 10
-  },
-  listText: {
-    fontFamily: 'Poppins-Regular',
-    fontSize: 17,
-    textAlign: 'justify',
-    color: '#FB0263'
   },
   itemIcon: {
     width: 10,

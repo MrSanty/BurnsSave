@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { DrawerActions, useNavigation } from '@react-navigation/native';
 import { drawerRoutes } from 'src/routes/drawer.routes';
 import { RouteDrawer } from 'src/types/routes';
+import { BackHandler } from 'react-native';
 
 export const useDrawerMenu = () => {
   const navigation = useNavigation<any>();
@@ -27,6 +28,11 @@ export const useDrawerMenu = () => {
   }, [])
 
   const onRoutePress = (route: RouteDrawer) => {
+    if (route.key === 13) {
+      BackHandler.exitApp();
+      return;
+    }
+
     if (route.children) {
       expandSection(route);
     } else {

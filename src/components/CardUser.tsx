@@ -1,35 +1,38 @@
 import { FC } from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native'
+import { LinkText } from './Link';
 
 interface Props {
   urlImage: any;
   name: string;
-  fullWidth?: boolean;
   text?: string;
+  email: string;
+  cvlac: string;
 }
 
 
-const CardUser: FC<Props> = ({ urlImage, name, fullWidth, text }) => {
+const CardUser: FC<Props> = ({ urlImage, name, text, email, cvlac }) => {
   return (
-      <View style={[styles.card, fullWidth && { width: '100%' }]}>
-        <View style={styles.photoCard}>
-          <Image
-            source={urlImage}
-            style={styles.profile}
-          />
-        </View>
-        <View style={styles.titleCard}>
-          <Text style={styles.titleC}>{name}</Text>
-        </View>
-
-        {
-          fullWidth && (
-            <View style={styles.bodyCard}>
-              <Text style={styles.textC}>{text}</Text>
-            </View>
-          )
-        }
+    <View style={[ styles.card, { width: '100%' } ]}>
+      <View style={styles.photoCard}>
+        <Image
+          source={urlImage}
+          style={styles.profile}
+        />
       </View>
+      <View style={styles.titleCard}>
+        <Text style={styles.titleC}>{name}</Text>
+      </View>
+      <View style={styles.bodyCard}>
+        {text && <Text style={styles.textC}>{text}</Text>}
+        <Text style={styles.textC}>{email}</Text>
+        <LinkText
+          customStyle={styles.link}
+          name="Cvlac"
+          url={cvlac}
+        />
+      </View>
+    </View>
   )
 }
 
@@ -63,6 +66,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#000',
     textAlign: 'center'
+  },
+  link: {
+    textAlign: 'center',
+    fontSize: 15,
   },
   profile: {
     borderRadius: 200,

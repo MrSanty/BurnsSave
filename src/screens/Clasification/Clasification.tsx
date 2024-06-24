@@ -28,7 +28,7 @@ const Clasification: FC<Props> = ({ navigation }) => {
           <Text style={styles.title}>DE LAS QUEMADURAS</Text>
         </View>
 
-        <View style={styles.scroll}>
+        <View style={styles.containerContent}>
           <ScrollView 
             showsVerticalScrollIndicator={false}
             style={styles.scroll}
@@ -79,8 +79,12 @@ const styles = StyleSheet.create({
     maxHeight: 30,
     minHeight: 25
   },
+  containerContent: {
+    flex: 1/1.8,
+    paddingBottom: 15
+  },
   scroll: {
-    flex: 5/7
+    flexGrow: 0
   }
 })
 

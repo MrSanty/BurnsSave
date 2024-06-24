@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
   },
   containerDrawer: {
     alignItems: 'flex-start',
-    height: 230,
+    height: '54%',
     width: '100%'
   },
   logoUamContainer: {
@@ -111,7 +111,6 @@ const styles = StyleSheet.create({
     height: 'auto'
   },
   uamImage: {
-    height: 250,
     resizeMode: 'contain',
     width: 250
   },

@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 const FrozenBurn = () => {
   return (
@@ -9,12 +9,14 @@ const FrozenBurn = () => {
         <View style={styles.contentTitle}>
           <Text style={styles.title}>Quemaduras por congelación</Text>
         </View>
-        <Text style={styles.content}>
-          La quemadura por congelación es un daño en la piel debido al congelamiento, producto de
-          una exposición prolongada a temperaturas frías, por lo general, debajo de los 32° F (0°
-          C). Se produce cuando se forman cristales de hielos en la piel o en el tejido más
-          profundo.
-        </Text>
+        <ScrollView style={styles.scroll}>
+          <Text style={styles.content}>
+            La quemadura por congelación es un daño en la piel debido al congelamiento, producto de
+            una exposición prolongada a temperaturas frías, por lo general, debajo de los 32° F (0°
+            C). Se produce cuando se forman cristales de hielos en la piel o en el tejido más
+            profundo.
+          </Text>
+        </ScrollView>
       </View>
     </View>
   )
@@ -53,6 +55,9 @@ const styles = StyleSheet.create({
     lineHeight: 27,
     textAlign: 'justify',
     color: '#2E2F32'
+  },
+  scroll: {
+    flexGrow: 0
   }
 })
 

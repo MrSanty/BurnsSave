@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 const FireBurn = () => {
   return (
@@ -9,11 +9,13 @@ const FireBurn = () => {
         <View style={styles.contentTitle}>
           <Text style={styles.title}>Quemaduras por fuego</Text>
         </View>
-        <Text style={styles.content}>
-          Una quemadura térmica o inducida por calor puede ocurrir cuando la piel entra en contacto
-          con cualquier fuente de calor, como una sartén, una plancha, el fuego, una superficie
-          caliente, o un gas o líquido hirviendo.
-        </Text>
+        <ScrollView style={styles.scroll}>
+          <Text style={styles.content}>
+            Una quemadura térmica o inducida por calor puede ocurrir cuando la piel entra en contacto
+            con cualquier fuente de calor, como una sartén, una plancha, el fuego, una superficie
+            caliente, o un gas o líquido hirviendo.
+          </Text>
+        </ScrollView>
       </View>
     </View>
   )
@@ -52,6 +54,9 @@ const styles = StyleSheet.create({
     lineHeight: 27,
     textAlign: 'justify',
     color: '#2E2F32'
+  },
+  scroll: {
+    flexGrow: 0
   }
 })
 

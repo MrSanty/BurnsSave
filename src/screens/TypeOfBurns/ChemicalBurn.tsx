@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 const ChemicalBurn = () => {
   return (
@@ -9,11 +9,13 @@ const ChemicalBurn = () => {
         <View style={styles.contentTitle}>
           <Text style={styles.title}>Quemaduras por químicos</Text>
         </View>
-        <Text style={styles.content}>
-          Las quemaduras químicas son daños a los tejidos provocados por ácidos fuertes, limpiadores
-          para el desagüe, diluyente de pintura, gasolina y muchas otras sustancias. Por lo general,
-          la persona se percata de dicha quemadura y su causa.
-        </Text>
+        <ScrollView style={styles.scroll}>
+          <Text style={styles.content}>
+            Las quemaduras químicas son daños a los tejidos provocados por ácidos fuertes, limpiadores
+            para el desagüe, diluyente de pintura, gasolina y muchas otras sustancias. Por lo general,
+            la persona se percata de dicha quemadura y su causa.
+          </Text>
+        </ScrollView>
       </View>
     </View>
   )
@@ -52,6 +54,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 27,
     textAlign: 'justify'
+  },
+  scroll: {
+    flexGrow: 0
   }
 })
 
